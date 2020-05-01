@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Camiseta Básica Preta",
+      "description": "Uma camiseta preta",
+      "price": 29.9,
+      "stock": 100,
+      "comments": [
+        {
+          "id": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Calça Jeans Bege",
+      "description": "Uma calça jeans bege",
+      "price": 79.9,
+      "stock": 50,
+      "comments": [
+        {
+          "id": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Boné Aba Reta",
+      "description": "Um boné aba reta",
+      "price": 49.9,
+      "stock": 50,
+      "comments": [
+        {
+          "id": 1
+        }
+      ]
+    }
+  ]
+}
