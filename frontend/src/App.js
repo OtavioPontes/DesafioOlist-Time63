@@ -1,10 +1,12 @@
 import React from 'react';
 import './styles/global.css';
 
+import Routes from './routes/routes';
+
 function App() {
     return (
         <>
-            <h1>Miau</h1>
+            <Routes />
         </>
     );
 }
