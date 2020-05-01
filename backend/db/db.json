@@ -6,9 +6,19 @@
       "description": "Uma camiseta preta",
       "price": 29.9,
       "stock": 100,
+      "image": "https://docs.google.com/uc?id=1l6as7XQgwNYNgcv68vnc1sIksEdqMJoH",
       "comments": [
         {
-          "id": 1
+          "id": 1,
+          "customer_name": "João",
+          "description": "Tem da cor branca?",
+          "status": "created"
+        },
+        {
+          "id": 2,
+          "customer_name": "Fernando",
+          "description": "Possui o produto a pronta entrega?",
+          "status": "closed"
         }
       ]
     },
@@ -18,9 +28,13 @@
       "description": "Uma calça jeans bege",
       "price": 79.9,
       "stock": 50,
+      "image": "https://docs.google.com/uc?id=1LLM32WlJSYBSXvOzwytM-o5XDkDSn5lY",
       "comments": [
         {
-          "id": 1
+          "id": 1,
+          "customer_name": "José",
+          "description": "Tem o tamanho 40?",
+          "status": "created"
         }
       ]
     },
@@ -30,9 +44,13 @@
       "description": "Um boné aba reta",
       "price": 49.9,
       "stock": 50,
+      "image": "https://docs.google.com/uc?id=1luujSMyPZTycEPXmpuyX5uaDuWiXmq-F",
       "comments": [
         {
-          "id": 1
+          "id": 1,
+          "customer_name": "Eduardo",
+          "description": "Tem de outras cores?",
+          "status": "created"
         }
       ]
     }

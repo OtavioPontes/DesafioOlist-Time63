@@ -22,7 +22,7 @@ function newComment(req, res) {
   let data = req.body;
   let productId = req.params.id
   service.product.newComment(data, productId)
-    .then(created => res.status(201).send(created))
+    .then(list => res.status(201).send(list))
     .catch(err => errorHandler(res, err, 500))
 }
 
