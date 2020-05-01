@@ -19,14 +19,30 @@ function findById(productId) {
   return Promise.resolve(product)
 }
 
-function findAllComments(productId) {
-  let comments = db.get('products').find({ id: parseInt(productId) }).value().comments
-
-  return Promise.resolve(comments)
+async function findAllComments(productId) {
+  let product = await findById(productId)
+  
+  return product.comments
 }
 
-function newComment(data, productId) {
+async function newComment(data, productId) {
+  if (!data.customer_name || !data.description) throw new Error("Missing data")
 
+  let {customer_name, description} = data
+  let comments = await findAllComments(productId)
+  let id = comments.length + 1
+  let comment = {
+    id,
+    customer_name,
+    description,
+    status: "created"
+  }
+
+  return db.get('products')
+    .find({ id: parseInt(productId) })
+    .get('comments')
+    .push(comment)
+    .write()
 }
 
 module.exports = {
