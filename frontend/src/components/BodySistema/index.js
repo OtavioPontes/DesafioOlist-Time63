@@ -43,6 +43,8 @@ export default function BodySistema() {
                         <p className="Produto">
                             Produto: Camiseta Básica Preta
                         </p>
+                        <label htmlFor="status">Status:</label>
+                        <input type="checkbox" name="status" id="status" />
                         <p className="Tags">
                             Tags: <button>cor</button>
                             <button>camiseta</button>
@@ -58,6 +60,8 @@ export default function BodySistema() {
                         <p className="Produto">
                             Produto: Camiseta Básica Preta
                         </p>
+                        <label htmlFor="status">Status: </label>
+                        <input type="checkbox" name="status" id="status" />
                         <p className="Tags">
                             Tags: <button>cor</button>
                             <button>camiseta</button>
@@ -73,6 +77,8 @@ export default function BodySistema() {
                         <p className="Produto">
                             Produto: Camiseta Básica Preta
                         </p>
+                        <label htmlFor="status">Status: </label>
+                        <input type="checkbox" name="status" id="status" />
                         <p className="Tags">
                             Tags: <button>cor</button>
                             <button>camiseta</button>

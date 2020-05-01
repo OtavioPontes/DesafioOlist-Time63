@@ -49,8 +49,8 @@ section.filtros {
 section.filtros select {
     width: 7rem;
     height: 40px;
-    margin-right: 2em;
-    margin-left: 2em;
+    margin-right: 1em;
+    margin-left: 1em;
     border-radius: 5px;
     color: black;
     font-size: 17px;
@@ -63,8 +63,9 @@ section.filtros select {
 
 section.filtros button.bt_submit {
     width: 80px;
-    height: 35px;
+    height: 40px;
     margin-left: 1em;
+    border-style: none;
     border-radius: 8px;
     font-weight: bold;
     color: white;
@@ -94,6 +95,16 @@ section.perguntas div.pergunta + div.pergunta {
 
 section.perguntas div.pergunta p {
     margin: 10px 0 10px 0;
+}
+
+section.perguntas div.pergunta label {
+    margin-right: 10px;
+}
+
+section.perguntas div.pergunta input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 section.perguntas div.pergunta button {
