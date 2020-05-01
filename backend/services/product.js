@@ -5,18 +5,18 @@ const path = require('path')
 const adapter = new FileSync(path.join(__dirname, '..', 'db/db.json'))
 const db = low(adapter)
 
-function findAll() {
-  let products = db.getState().products
+async function findAll() {
+  let products = await db.get('products').value()
   products = JSON.parse(JSON.stringify(products))
   products.forEach(product => delete product.comments)
 
-  return Promise.resolve(products)
+  return products
 }
 
-function findById(productId) {
-  let product = db.get('products').find({ id: parseInt(productId) }).value()
+async function findById(productId) {
+  let product = await db.get('products').find({ id: parseInt(productId) }).value()
 
-  return Promise.resolve(product)
+  return product
 }
 
 async function findAllComments(productId) {

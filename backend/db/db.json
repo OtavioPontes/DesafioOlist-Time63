@@ -4,6 +4,12 @@
       "id": 1,
       "name": "Camiseta Básica Preta",
       "description": "Uma camiseta preta",
+      "features": {
+        "genero": "Masculino",
+        "material": "Algodão",
+        "tamanho": [ "P", "M", "G"],
+        "cor": "preta"
+      },
       "price": 29.9,
       "stock": 100,
       "image": "https://docs.google.com/uc?id=1l6as7XQgwNYNgcv68vnc1sIksEdqMJoH",
@@ -26,6 +32,12 @@
       "id": 2,
       "name": "Calça Jeans Bege",
       "description": "Uma calça jeans bege",
+      "features": {
+        "genero": "Masculino",
+        "material": "Algodão",
+        "tamanho": [ 36, 38, 40, 42],
+        "cor": "bege"
+      },
       "price": 79.9,
       "stock": 50,
       "image": "https://docs.google.com/uc?id=1LLM32WlJSYBSXvOzwytM-o5XDkDSn5lY",
@@ -42,6 +54,12 @@
       "id": 3,
       "name": "Boné Aba Reta",
       "description": "Um boné aba reta",
+      "features": {
+        "genero": "Masculino",
+        "material": "Algodão",
+        "tamanho": [ "P", "M", "G"],
+        "cor": "preta"
+      },
       "price": 49.9,
       "stock": 50,
       "image": "https://docs.google.com/uc?id=1luujSMyPZTycEPXmpuyX5uaDuWiXmq-F",
