@@ -1,0 +1,59 @@
+{
+  "tasks": [
+    {
+      "identifier": "genero",
+      "fields": [
+        "genero",
+        "sexo",
+        "feminino",
+        "masculino"
+      ],
+      "actions": {
+        "say": "Disponibilizamos o produto para o gênero "
+      }
+    },
+    {
+      "identifier": "material",
+      "fields": [
+        "material",
+        "tecido",
+        "feito"
+      ],
+      "actions": {
+        "say": "O produto é feito em "
+      }
+    },
+    {
+      "identifier": "tamanho",
+      "fields": [
+        "tamanho",
+        "medidas",
+        "comprimento"
+      ],
+      "actions": {
+        "say": "Segue os tamanhos disponíveis: "
+      }
+    },
+    {
+      "identifier": "cor",
+      "fields": [
+        "cor",
+        "cores",
+        "coloração"
+      ],
+      "actions": {
+        "say": "Segue as cores disponíveis: "
+      }
+    },
+    {
+      "identifier": "modelo",
+      "fields": [
+        "modelo",
+        "marca"
+      ],
+      "actions": {
+        "say": "Trata-se de um modelo "
+      }
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const path = require('path')
+const bot = require('../bot')
 
 const adapter = new FileSync(path.join(__dirname, '..', 'db/db.json'))
 const db = low(adapter)
@@ -14,7 +15,7 @@ async function findAll() {
 }
 
 async function findById(productId) {
-  let product = await db.get('products').find({ id: parseInt(productId) }).value()
+  let product = await _getProduct(productId).value()
 
   return product
 }
@@ -35,14 +36,27 @@ async function newComment(data, productId) {
     id,
     customer_name,
     description,
-    status: "created"
+    status: "created",
+    response: ""
   }
 
-  return db.get('products')
-    .find({ id: parseInt(productId) })
+  await _getProduct(productId)
     .get('comments')
     .push(comment)
     .write()
+
+  let response = bot.handleMessage(description, await findById(productId))
+  if (response) {
+    _getProduct(productId)
+      .get('comments').find({ id })
+      .assign({ response, status: "closed" })
+      .write()
+  }
+  return response
+}
+
+function _getProduct(id) {
+  return db.get('products').find({ id: parseInt(id) })
 }
 
 module.exports = {
