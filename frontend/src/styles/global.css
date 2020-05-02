@@ -7,6 +7,14 @@
     box-sizing: border-box;
 }
 
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
 body {
     font: 400 14px Oswald, sans-serif;
     background: #EBEBEB;
@@ -15,8 +23,4 @@ body {
 
 input, button, textarea {
     font: 400 18px Oswald, sans-serif;
-}
-
-button {
-    cursor: pointer;
 }

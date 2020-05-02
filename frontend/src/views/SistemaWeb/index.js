@@ -1,9 +1,15 @@
 import React from 'react';
+import './styles.css';
+import FooterSistema from '../../components/FooterSistema';
+import HeaderSistema from '../../components/HeaderSistema';
+import BodySistema from '../../components/BodySistema';
 
 export default function SistemaWeb() {
     return (
         <>
-            <h1>Sistema Web</h1>
+            <HeaderSistema class="Header" />
+            <BodySistema class="Body" />
+            <FooterSistema class="Footer" />
         </>
     );
 }
