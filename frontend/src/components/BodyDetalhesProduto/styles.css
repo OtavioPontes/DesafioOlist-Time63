@@ -1,169 +1,189 @@
-div.background {
-    background-color: whitesmoke;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.background {
+  background-color: whitesmoke;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bt_voltar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  margin-left: 100px;
+  margin-top: 50px;
+  background-color: white;
+  padding: 12px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.bt_voltar:hover {
+  opacity: 0.8;
 }
 
-div.card_detalhes {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50vw;
-    max-width: 70vw;
-    padding: 40px;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    border-radius: 10px;
+.bt_voltar p {
+  margin-left: 10px;
+  display: flex;
 }
 
-div.card_detalhes div.detalhes_produto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+.card_detalhes {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  max-width: 70vw;
+  padding: 40px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 10px;
 }
 
-div.card_detalhes div.detalhes_produto div.col_detalhes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.detalhes_produto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
-div.card_detalhes div.detalhes_produto div.col_detalhes button {
-    width: 130px;
-    height: 40px;
-    margin-top: 20px;
-    background-color: transparent;
-    border-style: none;
-    border: 2px solid black;
-    border-radius: 15px;
-    font-size: 17px;
-    font-weight: 500;
+.col_detalhes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-div.card_detalhes div.detalhes_produto div.detalhes {
-    background-color: whitesmoke;
-    font-size: 16px;
-    padding: 30px;
-    border-radius: 10px;
-    margin-left: 50px;
-}
-div.card_detalhes div.detalhes_produto div.detalhes h1 {
-    font-size: 25px;
-}
-
-div.imagem_preco {
+.col_detalhes button {
+  width: 130px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: transparent;
+  border-style: none;
+  border: 2px solid black;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 500;
 }
 
-div.imagem_preco img {
-    width: 200px;
-    margin-bottom: 20px;
+.detalhes {
+  background-color: whitesmoke;
+  font-size: 16px;
+  padding: 30px;
+  border-radius: 10px;
+  margin-left: 50px;
+}
+.detalhes h1 {
+  font-size: 25px;
 }
 
-div.imagem_preco p {
-    text-decoration: line-through;
+.imagem_preco img {
+  width: 200px;
+  margin-bottom: 20px;
 }
 
-div.card_detalhes div.detalhes_produto button {
-    position: relative;
+.imagem_preco p {
+  text-decoration: line-through;
 }
 
-div.card_detalhes div.detalhes_produto div.detalhes h1 {
-    margin-bottom: 3px;
+.detalhes_produto button {
+  position: relative;
+  height: 3em;
+  font-size: 18px;
+  font-weight: 700;
 }
 
-div.card_detalhes div.detalhes_produto div.detalhes h1.frete {
-    color: #1ba305;
+.detalhes h1 {
+  margin-bottom: 3px;
 }
 
-div.card_detalhes div.detalhes_produto div.detalhes h1.frete {
-    margin-bottom: 30px;
+.frete {
+  color: #1ba305;
 }
 
-div.card_detalhes div.detalhes_produto div.detalhes h1.disponibilidade {
-    margin-top: 30px;
+.marca {
+  margin-top: 30px;
 }
 
-div.background div.card_perguntas {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 40vw;
-    padding: 40px;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    border-radius: 10px;
+.disponibilidade {
+  margin-top: 30px;
 }
 
-div.background div.card_perguntas div.user {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 20px;
+.card_perguntas {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+  padding: 40px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 10px;
 }
 
-div.background div.card_perguntas div.user img {
-    width: 70px;
-    margin-right: 20px;
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
 }
 
-div.background div.card_perguntas div.user p {
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
-    width: 1fr;
-    max-width: 300px;
-    padding: 10px;
-    border-radius: 20px;
+.user img {
+  width: 70px;
+  margin-right: 20px;
 }
 
-div.background div.card_perguntas div.bot {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+.user p {
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 1fr;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 20px;
 }
 
-div.background div.card_perguntas div.bot img {
-    width: 70px;
-    margin-left: 20px;
+.bot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }
 
-div.background div.card_perguntas div.bot p {
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
-    width: 1fr;
-    padding: 10px;
-    border-radius: 20px;
+.bot img {
+  width: 70px;
+  margin-left: 20px;
 }
 
-div.background div.faca_sua_pergunta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 100px;
-    margin-top: 15px;
+.bot p {
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 1fr;
+  padding: 10px;
+  border-radius: 20px;
 }
 
-div.background div.faca_sua_pergunta textarea {
-    border: none;
-    margin-bottom: 20px;
-    padding: 10px;
-    width: 40vw;
-    height: 120px;
-    font-size: 17px;
+.faca_sua_pergunta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+  margin-top: 15px;
 }
 
-div.background div.faca_sua_pergunta button {
-    width: 130px;
-    height: 40px;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    font-size: 17px;
-    font-weight: 500;
+.faca_sua_pergunta textarea {
+  border: none;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 40vw;
+  height: 120px;
+  font-size: 17px;
+}
+
+.faca_sua_pergunta button {
+  width: 130px;
+  height: 40px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 500;
 }

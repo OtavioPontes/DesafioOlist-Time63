@@ -5,11 +5,12 @@ import './styles.css';
 import chamegoLogo from '../../assets/chamego.png';
 
 export default function Header() {
-  return(
+  return (
     <>
       <header className="header-container">
-        <img src={chamegoLogo} alt="Logo" />
-
+        <Link to="/">
+          <img src={chamegoLogo} alt="Logo" />
+        </Link>
         <div className="sign">
           <Link className="sign-in" to="/login">
             Sign in |
@@ -21,5 +22,5 @@ export default function Header() {
         </div>
       </header>
     </>
-
   );
+}
