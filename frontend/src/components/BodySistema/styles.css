@@ -1,158 +1,158 @@
 div.background {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 div.card_group {
-    width: 85vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.1);
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.1);
 }
 section.entrada {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 section.entrada h1 {
-    font-size: 45px;
+  font-size: 45px;
 }
 section.entrada p {
-    font-size: 45px;
-    margin-left: 10px;
-    font-weight: 200;
+  font-size: 45px;
+  margin-left: 10px;
+  font-weight: 200;
 }
 
 section.filtros {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 70vw;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 section.filtros select {
-    width: 7rem;
-    height: 40px;
-    margin-right: 1em;
-    margin-left: 1em;
-    border-radius: 5px;
-    color: black;
-    font-size: 17px;
-    background-color: rgba(0, 0, 0, 0.05);
-    border: none;
-    border-radius: 8px;
-    text-align: center;
-    text-align-last: center;
+  width: 7rem;
+  height: 40px;
+  margin-right: 1em;
+  margin-left: 1em;
+  border-radius: 5px;
+  color: black;
+  font-size: 17px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  text-align-last: center;
 }
 
 section.filtros button.bt_submit {
-    width: 80px;
-    height: 40px;
-    margin-left: 1em;
-    border-style: none;
-    border-radius: 8px;
-    font-weight: bold;
-    color: white;
-    background-color: #349cdd;
+  width: 80px;
+  height: 40px;
+  margin-left: 1em;
+  border-style: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  background-color: #349cdd;
 }
 
 section.perguntas {
 }
 
 section.perguntas p.total {
-    display: flex;
-    justify-content: flex-end;
-    align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
 }
 
 section.perguntas div.pergunta {
-    background-color: #ebebeb;
-    width: 40vw;
-    padding: 20px 30px 20px 30px;
-    margin-top: 15px;
-    box-shadow: -4px 3px 10px rgba(0, 0, 0, 0.25);
+  background-color: #ebebeb;
+  width: 40vw;
+  padding: 20px 30px 20px 30px;
+  margin-top: 15px;
+  box-shadow: -4px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
 section.perguntas div.pergunta + div.pergunta {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 section.perguntas div.pergunta p {
-    margin: 10px 0 10px 0;
+  margin: 10px 0 10px 0;
 }
 
 section.perguntas div.pergunta label {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 section.perguntas div.pergunta input {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 section.perguntas div.pergunta button {
-    margin: 0 5px 0 5px;
-    width: 1fr;
-    padding: 7px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.1);
-    font-weight: 600;
+  margin: 0 5px 0 5px;
+  width: 1fr;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: 600;
 }
 
 section.perguntas div.pergunta button.bt_responder {
-    position: relative;
-    float: right;
-    width: 85px;
-    height: 35px;
-    background-color: #01b473;
-    color: white;
+  position: relative;
+  float: right;
+  width: 85px;
+  height: 35px;
+  background-color: #01b473;
+  color: white;
 }
 
 section.indice button {
-    margin-top: 3em;
-    width: 150px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    font-size: 20px;
+  margin-top: 3em;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
 }

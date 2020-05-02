@@ -1,11 +1,15 @@
 import React from 'react';
+
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import BodyHome from '../../components/BodyHome';
 
 export default function Home() {
-    return (
-        <>
-            <Header />
-            <h1>Home</h1>
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <BodyHome />
+      <Footer />
+    </>
+  );
 }
