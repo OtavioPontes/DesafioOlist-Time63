@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    outline: none;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 400 14px Oswald, sans-serif;
+    background: #EBEBEB;
+    -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea {
+    font: 400 18px Oswald, sans-serif;
+}
+
+button {
+    cursor: pointer;
 }
