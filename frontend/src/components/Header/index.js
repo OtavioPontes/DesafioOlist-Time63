@@ -11,11 +11,11 @@ export default function Header() {
         <img src={chamegoLogo} alt="Logo" />
 
         <div className="sign">
-          <Link className="sign-in" to="/login">
+          <Link className="sign-in">
             Sign in |
           </Link>
 
-          <Link className="sign-up" to="/register">
+          <Link className="sign-up">
             Sign up
           </Link>
         </div>
@@ -23,3 +23,4 @@ export default function Header() {
     </>
 
   );
+}

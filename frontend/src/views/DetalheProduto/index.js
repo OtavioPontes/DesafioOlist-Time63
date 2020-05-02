@@ -1,15 +1,15 @@
 import React from 'react';
 
+import Header from '../../components/Header';
 import BodyDetalhesProduto from '../../components/BodyDetalhesProduto';
-import HeaderSistema from '../../components/HeaderSistema';
-import FooterSistema from '../../components/FooterSistema';
+import Footer from '../../components/Footer';
 
 export default function DetalheProduto() {
     return (
         <>
-            <HeaderSistema />
+            <Header />
             <BodyDetalhesProduto />
-            <FooterSistema />
+            <Footer />
         </>
     );
 }

@@ -57,6 +57,7 @@ div.card_detalhes div.detalhes_produto div.detalhes h1 {
 }
 
 div.imagem_preco {
+  size:0;
 }
 
 div.imagem_preco img {
