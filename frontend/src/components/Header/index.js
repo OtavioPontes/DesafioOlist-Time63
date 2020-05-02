@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 import chamegoLogo from '../../assets/chamego.png';
@@ -12,16 +12,11 @@ export default function Header() {
           <img src={chamegoLogo} alt="Logo" />
         </Link>
         <div className="sign">
-          <Link className="sign-in">
-            Sign in |
-          </Link>
+          <Link className="sign-in">Sign in |</Link>
 
-          <Link className="sign-up">
-            Sign up
-          </Link>
+          <Link className="sign-up">Sign up</Link>
         </div>
       </header>
     </>
   );
 }
-
