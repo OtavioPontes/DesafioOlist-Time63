@@ -11,7 +11,7 @@ export default function BodyDetalhesProduto() {
   return (
     <div className="background">
       <div className="bt_voltar">
-        <Link to="/">
+        <Link to="/" className="link_voltar">
           <FaArrowLeft />
           <p>Voltar</p>
         </Link>
