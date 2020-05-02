@@ -27,7 +27,7 @@
 }
 
 .grid-item img {
-  width: 10em;
+  max-width: 140px;
   margin-top: 1em;
 }
 

@@ -104,20 +104,28 @@
   font-weight: 700;
 }
 
-.detalhes h1 {
-  margin-bottom: 3px;
+.detalhes .nome {
+  font-weight: bold;
+  font-size: 30px;
 }
 
-.frete {
+.detalhes h1 {
+  margin-bottom: 3px;
+  font-weight: 300;
+}
+
+.detalhes .frete {
   color: #1ba305;
+  font-weight: 500;
 }
 
 .marca {
   margin-top: 30px;
 }
 
-.disponibilidade {
+.detalhes .disponibilidade {
   margin-top: 30px;
+  font-weight: 500;
 }
 
 .card_perguntas {
@@ -132,19 +140,21 @@
   border-radius: 10px;
 }
 
-.user {
+.user1 {
   display: flex;
+
   align-items: center;
+
   justify-content: flex-start;
   margin-bottom: 20px;
 }
 
-.user img {
+.user1 img {
   width: 70px;
   margin-right: 20px;
 }
 
-.user p {
+.user1 p {
   font-size: 20px;
   background-color: rgba(0, 0, 0, 0.1);
   width: 1fr;
