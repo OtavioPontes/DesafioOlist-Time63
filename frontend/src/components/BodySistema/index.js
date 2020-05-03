@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
 
+import api from '../../services/api';
+
 export default function BodySistema() {
+  const [products, setProducts] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [index, setIndex] = useState();
+
+  useEffect(() => {
+    api.get('/product').then((response) => {
+      setProducts(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    api.get(`/product/1/comment`).then((response) => {
+      setComments(response.data);
+    });
+  }, [products]);
+
   return (
     <div className="background">
       <div className="card_group">
@@ -38,49 +56,22 @@ export default function BodySistema() {
         </section>
         <section className="perguntas">
           <p className="total">Um total de 3 perguntas</p>
-
-          <div className="pergunta">
-            <h1>Pergunta: Qual a cor dessa camiseta?</h1>
-            <p className="Loja">Loja: Chameguinho Store</p>
-            <p className="Usuario">Usuário: usuário1</p>
-            <p className="Produto">Produto: Camiseta Básica Preta</p>
-            <p classname="status">Status: Pendente</p>
-            <p className="Tags">
-              Tags: <button>cor</button>
-              <button>camiseta</button>
-              <button class="bt_responder" id="bt_responder">
-                Responder
-              </button>
-            </p>
-          </div>
-          <div className="pergunta">
-            <h1>Pergunta: Qual a cor dessa camiseta?</h1>
-            <p className="Loja">Loja: Chameguinho Store</p>
-            <p className="Usuario">Usuário: usuário1</p>
-            <p className="Produto">Produto: Camiseta Básica Preta</p>
-            <p classname="status">Status: Pendente</p>
-            <p className="Tags">
-              Tags: <button>cor</button>
-              <button>camiseta</button>
-              <button class="bt_responder" id="bt_responder">
-                Responder
-              </button>
-            </p>
-          </div>
-          <div className="pergunta">
-            <h1>Pergunta: Qual a cor dessa camiseta?</h1>
-            <p className="Loja">Loja: Chameguinho Store</p>
-            <p className="Usuario">Usuário: usuário1</p>
-            <p className="Produto">Produto: Camiseta Básica Preta</p>
-            <p classname="status">Status: Pendente</p>
-            <p className="Tags">
-              Tags: <button>cor</button>
-              <button>camiseta</button>
-              <button class="bt_responder" id="bt_responder">
-                Responder
-              </button>
-            </p>
-          </div>
+          {comments.map((comment) => (
+            <div className="pergunta">
+              <h1>Pergunta: Qual a cor dessa camiseta?</h1>
+              <p className="Loja">Loja: Chameguinho Store</p>
+              <p className="Usuario">Usuário: usuário1</p>
+              <p className="Produto">Produto: Camiseta Básica Preta</p>
+              <p classname="status">Status: Pendente</p>
+              <p className="Tags">
+                Tags: <button>cor</button>
+                <button>camiseta</button>
+                <button class="bt_responder" id="bt_responder">
+                  Responder
+                </button>
+              </p>
+            </div>
+          ))}
         </section>
 
         <div id="myModal" class="modal">

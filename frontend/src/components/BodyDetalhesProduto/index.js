@@ -73,7 +73,7 @@ export default function BodyDetalhesProduto() {
       <div className="card_perguntas">
         {comments.map((comment) => (
           <div className="user1">
-            <img src={User} alt="usuario1" />
+            <img src={comment.customer_image} alt="usuario1" />
             <p>{comment.description} </p>
           </div>
         ))}

@@ -152,6 +152,7 @@
 .user1 img {
   width: 70px;
   margin-right: 20px;
+  border-radius: 50px;
 }
 
 .user1 p {
