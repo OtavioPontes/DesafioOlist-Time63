@@ -11,11 +11,15 @@ import api from '../../services/api';
 export default function BodyDetalhesProduto() {
   const [products, setProducts] = useState([]);
   const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+  const [id, setId] = useState('');
+  const [resp, setResp] = useState('');
 
   useEffect(() => {
     const url = window.location.search;
     const urlParams = new URLSearchParams(url);
     const id_type = urlParams.get('id');
+    setId(id_type);
 
     api.get(`/product/${id_type}`).then((response) => {
       setProducts(response.data);
@@ -24,7 +28,24 @@ export default function BodyDetalhesProduto() {
     api.get(`/product/${id_type}/comment`).then((response) => {
       setComments(response.data);
     });
-  }, []);
+  }, [resp]);
+
+  async function handleNewComment(e) {
+    e.preventDefault();
+
+    const data = newComment;
+
+    try {
+      const response = await api.post(`/product/${id}/comment`, {
+        customer_name: 'usuario1',
+        description: data,
+      });
+      setResp(response);
+      setNewComment('');
+    } catch (error) {
+      alert('Houve um erro ao registrar sua pergunta, tente novamente');
+    }
+  }
 
   return (
     <div className="background">
@@ -84,13 +105,17 @@ export default function BodyDetalhesProduto() {
         </div>
       </div>
       <h1>Digite sua Pergunta:</h1>
+
       <div className="faca_sua_pergunta">
-        <textarea
-          name=""
-          id=""
-          placeholder="Mande aqui sua dúvida..."
-        ></textarea>
-        <button>Enviar</button>
+        <form onSubmit={handleNewComment}>
+          <textarea
+            id="textarea_input"
+            placeholder="Mande aqui sua dúvida..."
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+          ></textarea>
+          <button type="submit">Enviar</button>
+        </form>
       </div>
     </div>
   );
