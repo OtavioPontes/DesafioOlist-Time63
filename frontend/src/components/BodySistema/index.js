@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
 import { Link, useHistory } from 'react-router-dom';
+import { FiHelpCircle } from 'react-icons/fi';
 import api from '../../services/api';
 
 export default function BodySistema() {
@@ -9,6 +10,24 @@ export default function BodySistema() {
   const [index, setIndex] = useState();
   const [singleComment, setsingleComment] = useState([]);
   const [newResponse, setNewResponse] = useState('');
+  const [btState, setBtState] = useState(false);
+
+  function openHelper() {
+    var helperModal = document.getElementById('help_modal');
+    var btModal = document.getElementById('help_button');
+
+    btModal.onclick = function () {
+      if (btState == false) {
+        helperModal.style.display = 'flex';
+        setBtState(true);
+        console.log(btState);
+      } else {
+        helperModal.style.display = 'none';
+        setBtState(false);
+        console.log(btState);
+      }
+    };
+  }
 
   function openModal(comment) {
     setsingleComment(comment);
@@ -81,6 +100,18 @@ export default function BodySistema() {
           Bem vindo ao seu Sistema Automatizado de Classificação de Perguntas
         </h2>
         <section className="filtros">
+          <div className="help_modal" id="help_modal">
+            <h1>Ajuda com Filtros</h1>
+            <p className="topic">Complexidade:</p>
+            <p>Simples: Respondida pelo Bot</p>
+            <p>Complexa: Não Respondida pelo Bot</p>
+            <p className="topic">Status:</p>
+            <p>Respondida: Respondida por você</p>
+            <p>Pendente: Não Respondida por você</p>
+          </div>
+          <button id="help_button" className="help_button" onClick={openHelper}>
+            <FiHelpCircle className="help_icon" />
+          </button>
           <form>
             <select
               name="tipo_pergunta"
