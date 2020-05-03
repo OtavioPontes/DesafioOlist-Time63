@@ -1,15 +1,16 @@
-import React, { useState, useEffect, Props } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import CamisetaPreta from '../../assets/camisetaPreta.jpg';
+
 import User from '../../assets/user.png';
 import Bot from '../../assets/bot.png';
-import Vendedor from '../../assets/vendedor.png';
+
 import api from '../../services/api';
 
 export default function BodyDetalhesProduto() {
   const [products, setProducts] = useState([]);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     const url = window.location.search;
@@ -18,6 +19,10 @@ export default function BodyDetalhesProduto() {
 
     api.get(`/product/${id_type}`).then((response) => {
       setProducts(response.data);
+    });
+
+    api.get(`/product/${id_type}/comment`).then((response) => {
+      setComments(response.data);
     });
   }, []);
 
@@ -66,32 +71,16 @@ export default function BodyDetalhesProduto() {
       </div>
       <h1>Perguntas e Respostas</h1>
       <div className="card_perguntas">
-        <div className="user1">
-          <img src={User} alt="usuario1" />
-          <p>Qual a cor dessa camiseta? </p>
-        </div>
+        {comments.map((comment) => (
+          <div className="user1">
+            <img src={User} alt="usuario1" />
+            <p>{comment.description} </p>
+          </div>
+        ))}
+
         <div className="bot">
           <p>A cor é Preta </p>
           <img src={Bot} alt="bot" />
-        </div>
-        <div className="user1">
-          <img src={User} alt="usuario1" />
-          <p>Qual a disponibilidade? </p>
-        </div>
-        <div className="bot">
-          <p>O produto está Em Estoque ! </p>
-          <img src={Bot} alt="bot" />
-        </div>
-        <div className="user1">
-          <img src={User} alt="usuario1" />
-          <p>
-            Eu moro em Goiânia, se fizer o pedido hj o produto chega em quantos
-            dias?{' '}
-          </p>
-        </div>
-        <div className="bot">
-          <p>Bom dia, usuário1. O produto chega em 3 dias por Sedex. </p>
-          <img src={Vendedor} alt="vendedor1" />
         </div>
       </div>
       <h1>Digite sua Pergunta:</h1>

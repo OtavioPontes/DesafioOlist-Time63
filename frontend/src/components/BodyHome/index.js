@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
-import Camisa from '../../assets/camisa.png';
-import Calca from '../../assets/calca.png';
-import Bone from '../../assets/bone.png';
-
 import api from '../../services/api';
 
 export default function BodyHome() {

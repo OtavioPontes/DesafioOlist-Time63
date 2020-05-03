@@ -9,6 +9,9 @@ export default function BodySistema() {
           <h1>Olá,</h1>
           <p>Vendedor 1</p>
         </section>
+        <h2 className="bem_vindo">
+          Bem vindo ao seu Sistema Automatizado de Classificação de Perguntas
+        </h2>
         <section className="filtros">
           <form>
             <select

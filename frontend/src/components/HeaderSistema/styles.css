@@ -37,9 +37,10 @@ img.vendedor {
   position: absolute;
   left: 60px;
   top: 40px;
-  width: 110px;
+  width: 130px;
   padding: 8px;
   border: 2px solid black;
   border-radius: 20px;
   background-color: white;
+  font-size: 17px;
 }

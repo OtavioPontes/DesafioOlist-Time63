@@ -26,6 +26,7 @@
                 {
                     "id": 1,
                     "customer_name": "João",
+                    "customer_photo": "https://drive.google.com/uc?export=download&id=1zptf5GN2cpjkS25q8LFlxG6v07SkCtFM",
                     "description": "Tem da cor branca?",
                     "status": "created",
                     "type": "simple",
@@ -34,6 +35,7 @@
                 {
                     "id": 2,
                     "customer_name": "Fernando",
+                    "customer_photo": "https://drive.google.com/uc?export=download&id=1HfLPq949T20oy669RlNyJ1kK0wj7u7Hg",
                     "description": "Possui o produto a pronta entrega?",
                     "status": "created",
                     "type": "complex",
@@ -67,6 +69,7 @@
                 {
                     "id": 1,
                     "customer_name": "José",
+                    "customer_photo": "https://drive.google.com/uc?export=download&id=1BF_In0UOeRniC4Yo2SkER4c6NKDyvmaH",
                     "description": "Tem o tamanho 40?",
                     "status": "created",
                     "type": "simple",
@@ -98,6 +101,7 @@
                 {
                     "id": 1,
                     "customer_name": "Eduardo",
+                    "customer_photo": "https://drive.google.com/uc?export=download&id=1AYA5qT8vRdvu7aewbkM321JAbcOGkGiO",
                     "description": "Tem de outras cores?",
                     "status": "created",
                     "type": "simple",

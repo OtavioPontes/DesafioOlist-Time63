@@ -29,11 +29,17 @@
 
 .entrada h1 {
   font-size: 45px;
+  font-weight: normal;
 }
 .entrada p {
   font-size: 45px;
   margin-left: 10px;
-  font-weight: 200;
+  font-weight: 500;
+}
+.bem_vindo {
+  margin-top: 30px;
+  font-weight: lighter;
+  color: #0c29d0;
 }
 
 .filtros {
