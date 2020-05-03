@@ -19,7 +19,7 @@ export default function BodyHome() {
         <div class="grid-container">
           {products.map((product) => (
             <div class="grid-item">
-              <img src={product.image} alt="Camisa" />
+              <img src={product.imagem} alt="Camisa" />
 
               <div className="details">
                 <h3>{product.name}</h3>
@@ -27,14 +27,14 @@ export default function BodyHome() {
                   {Intl.NumberFormat('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
-                  }).format(product.price)}
+                  }).format(product.preco)}
                 </strike>
                 <h4>
                   {' '}
                   {Intl.NumberFormat('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
-                  }).format(product.discount_price)}
+                  }).format(product.preco_desconto)}
                 </h4>
               </div>
               <Link to={`/detalheProduto?id=${product.id}`}>
