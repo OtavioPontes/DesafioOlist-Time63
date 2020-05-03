@@ -28,6 +28,7 @@
                     "customer_name": "João",
                     "description": "Tem da cor branca?",
                     "status": "created",
+                    "type": "simple",
                     "response": ""
                 },
                 {
@@ -35,6 +36,7 @@
                     "customer_name": "Fernando",
                     "description": "Possui o produto a pronta entrega?",
                     "status": "created",
+                    "type": "complex",
                     "response": ""
                 }
             ]
@@ -67,6 +69,7 @@
                     "customer_name": "José",
                     "description": "Tem o tamanho 40?",
                     "status": "created",
+                    "type": "simple",
                     "response": ""
                 }
             ]
@@ -97,6 +100,7 @@
                     "customer_name": "Eduardo",
                     "description": "Tem de outras cores?",
                     "status": "created",
+                    "type": "simple",
                     "response": ""
                 }
             ]

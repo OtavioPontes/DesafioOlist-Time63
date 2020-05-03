@@ -20,7 +20,19 @@ async function findById(productId) {
     return product;
 }
 
-async function findAllComments(productId) {
+async function findComments(productId, filters) {
+    let receivedFilters = {};
+    if (filters) {
+        Object.keys(filters).forEach((item) => {
+            if (item) {
+                receivedFilters[item] = filters[item];
+            }
+        });
+        return _getProduct(productId)
+            .get("comments")
+            .find(receivedFilters)
+            .value();
+    }
     let product = await findById(productId);
 
     return product.comments;
@@ -71,7 +83,7 @@ function _getProduct(id) {
 module.exports = {
     findAll,
     findById,
-    findAllComments,
+    findComments,
     newComment,
     commentResponse,
 };

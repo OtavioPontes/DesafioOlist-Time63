@@ -14,9 +14,10 @@ function findById(req, res) {
         .catch((err) => errorHandler(res, err, 500));
 }
 
-function findAllComments(req, res) {
+function findComments(req, res) {
+    let data = req.body;
     service.product
-        .findAllComments(req.params.id)
+        .findComments(req.params.id, data)
         .then((comments) => res.status(200).send(comments))
         .catch((err) => errorHandler(res, err, 500));
 }
@@ -55,7 +56,7 @@ function errorHandler(res, err, status) {
 module.exports = {
     findAll,
     findById,
-    findAllComments,
+    findComments,
     newComment,
     commentResponse,
 };
