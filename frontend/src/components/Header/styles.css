@@ -56,10 +56,12 @@
   top: 40px;
   width: 130px;
   padding: 8px;
-  border: 2px solid black;
+  color: white;
+  border: 2px solid transparent;
   border-radius: 20px;
-  background-color: white;
+  background-color: #0c29d0;
   font-size: 17px;
+  font-weight: normal;
 }
 
 .cart {

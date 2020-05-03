@@ -30,48 +30,24 @@
           "customer_name": "João",
           "customer_image": "https://drive.google.com/uc?export=download&id=1BF_In0UOeRniC4Yo2SkER4c6NKDyvmaH",
           "description": "Tem da cor branca?",
-          "status": "created",
-          "status_tag": "Pendente",
+          "status": "closed",
+          "status_tag": "Respondida",
           "product_id": "1",
           "product_name": "Camiseta Básica Preta",
           "type": "simple",
-          "response": ""
+          "response": "Miaaaauuu"
         },
         {
           "id": 2,
           "customer_name": "Fernando",
           "customer_image": "https://drive.google.com/uc?export=download&id=1zptf5GN2cpjkS25q8LFlxG6v07SkCtFM",
           "description": "Possui o produto a pronta entrega?",
-          "status": "created",
-          "status_tag": "Pendente",
+          "status": "closed",
+          "status_tag": "Respondida",
           "product_id": "1",
           "product_name": "Camiseta Básica Preta",
           "type": "complex",
-          "response": ""
-        },
-        {
-          "id": 3,
-          "customer_name": "usuario1",
-          "customer_image": "https://drive.google.com/uc?export=download&id=1zptf5GN2cpjkS25q8LFlxG6v07SkCtFM",
-          "description": "Tem de Dryfit tb?",
-          "status": "created",
-          "status_tag": "Pendente",
-          "product_id": "1",
-          "product_name": "Camiseta Básica Preta",
-          "type": "complex",
-          "response": ""
-        },
-        {
-          "id": 4,
-          "customer_name": "usuario1",
-          "customer_image": "https://drive.google.com/uc?export=download&id=1zptf5GN2cpjkS25q8LFlxG6v07SkCtFM",
-          "description": "teste 1",
-          "status": "created",
-          "status_tag": "Pendente",
-          "product_id": "1",
-          "product_name": "Camiseta Básica Preta",
-          "type": "complex",
-          "response": ""
+          "response": "Possuimos sim"
         }
       ]
     },
@@ -106,12 +82,12 @@
           "customer_name": "José",
           "customer_image": "https://drive.google.com/uc?export=download&id=1BF_In0UOeRniC4Yo2SkER4c6NKDyvmaH",
           "description": "Tem o tamanho 40?",
-          "status": "created",
-          "status_tag": "Pendente",
+          "status": "closed",
+          "status_tag": "Respondida",
           "product_id": "2",
           "product_name": "Calça Jeans Bege",
           "type": "simple",
-          "response": ""
+          "response": "Temos sim"
         }
       ]
     },
@@ -143,12 +119,12 @@
           "customer_name": "Eduardo",
           "customer_image": "https://drive.google.com/uc?export=download&id=1AYA5qT8vRdvu7aewbkM321JAbcOGkGiO",
           "description": "Tem de outras cores?",
-          "status": "created",
-          "status_tag": "Pendente",
+          "status": "closed",
+          "status_tag": "Respondida",
           "product_id": "3",
           "product_name": "Boné Aba Reta",
           "type": "simple",
-          "response": ""
+          "response": "sim"
         }
       ]
     }
