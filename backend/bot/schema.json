@@ -90,7 +90,8 @@
       "fields": [
         "disponibilidade",
         "pronta-entrega",
-        "pronta entrega",
+        "pronta",
+        "entrega",
         "estoque"
       ],
       "actions": {

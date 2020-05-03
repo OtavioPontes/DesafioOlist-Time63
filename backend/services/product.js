@@ -4,6 +4,8 @@ const path = require("path");
 const bot = require("../bot");
 const userImg =
     "https://drive.google.com/uc?export=download&id=1zptf5GN2cpjkS25q8LFlxG6v07SkCtFM";
+const _ = require("lodash");
+
 const adapter = new FileSync(path.join(__dirname, "..", "db/db.json"));
 const db = low(adapter);
 
@@ -21,7 +23,41 @@ async function findById(productId) {
     return product;
 }
 
-async function findComments(productId, filters) {
+async function findComments(filters) {
+    let receivedFilters = {};
+    let comments = [];
+    let products = await db.get("products").value();
+    products.forEach((product) => {
+        product.comments.forEach((comment) => {
+            comments.push(comment);
+        });
+    });
+
+    if (filters && Object.keys(filters).length > 0) {
+        Object.keys(filters).forEach((item) => {
+            if (item) {
+                if (item !== "tag") receivedFilters[item] = filters[item];
+            }
+        });
+
+        let commentsFiltered1 = _.filter(comments, receivedFilters);
+        let commentsFiltered2 = [];
+        if (filters.tag) {
+            commentsFiltered1.forEach((comment) => {
+                if (filters.tag == bot.findTagComment(comment.description)) {
+                    commentsFiltered2.push(comment);
+                }
+            });
+            return commentsFiltered2;
+        } else {
+            return commentsFiltered1;
+        }
+    }
+
+    return comments;
+}
+
+async function findProductComments(productId, filters) {
     let receivedFilters = {};
     if (filters && Object.keys(filters).length > 0) {
         Object.keys(filters).forEach((item) => {
@@ -44,7 +80,7 @@ async function newComment(data, productId) {
         throw new Error("Missing data");
 
     let { customer_name, description } = data;
-    let comments = await findComments(productId);
+    let comments = await findProductComments(productId);
     let customer_image = userImg;
     let id = comments.length + 1;
     let comment = {
@@ -92,6 +128,7 @@ module.exports = {
     findAll,
     findById,
     findComments,
+    findProductComments,
     newComment,
     commentResponse,
 };
