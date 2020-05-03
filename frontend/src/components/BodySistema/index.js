@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
-
+import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 export default function BodySistema() {
@@ -15,7 +15,7 @@ export default function BodySistema() {
   }, []);
 
   useEffect(() => {
-    api.get(`/product/1/comment`).then((response) => {
+    api.get('/product/comment/list').then((response) => {
       setComments(response.data);
     });
   }, [products]);
@@ -55,14 +55,23 @@ export default function BodySistema() {
           </form>
         </section>
         <section className="perguntas">
-          <p className="total">Um total de 3 perguntas</p>
+          <p className="total">Um total de {comments.length} perguntas</p>
           {comments.map((comment) => (
             <div className="pergunta">
-              <h1>Pergunta: Qual a cor dessa camiseta?</h1>
-              <p className="Loja">Loja: Chameguinho Store</p>
-              <p className="Usuario">Usuário: usuário1</p>
-              <p className="Produto">Produto: Camiseta Básica Preta</p>
-              <p classname="status">Status: Pendente</p>
+              <h1>Pergunta: {comment.description}</h1>
+              <p className="Loja">
+                Loja:{' '}
+                <Link
+                  to={`/detalheProduto?id=${comment.product_id}`}
+                  className="loja"
+                  target="_blank"
+                >
+                  Chameguinho Store
+                </Link>{' '}
+              </p>
+              <p className="Usuario">Usuário: {comment.customer_name}</p>
+              <p className="Produto">Produto: {comment.product_name}</p>
+              <p classname="status">Status: {comment.status_tag}</p>
               <p className="Tags">
                 Tags: <button>cor</button>
                 <button>camiseta</button>
@@ -76,14 +85,11 @@ export default function BodySistema() {
 
         <div id="myModal" class="modal">
           <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <p></p>
           </div>
         </div>
 
-        <section className="indice">
-          <button> 1 2 3 </button>
-        </section>
+        <section className="indice"></section>
       </div>
     </div>
   );

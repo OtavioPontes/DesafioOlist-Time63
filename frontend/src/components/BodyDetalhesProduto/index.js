@@ -14,6 +14,7 @@ export default function BodyDetalhesProduto() {
   const [newComment, setNewComment] = useState('');
   const [id, setId] = useState('');
   const [resp, setResp] = useState('');
+  const [name, setName] = useState('');
 
   useEffect(() => {
     const url = window.location.search;
@@ -23,6 +24,7 @@ export default function BodyDetalhesProduto() {
 
     api.get(`/product/${id_type}`).then((response) => {
       setProducts(response.data);
+      setName(response.data.nome);
     });
 
     api.get(`/product/${id_type}/comment`).then((response) => {
@@ -39,8 +41,11 @@ export default function BodyDetalhesProduto() {
       const response = await api.post(`/product/${id}/comment`, {
         customer_name: 'usuario1',
         description: data,
+        product_id: id,
+        product_name: name,
       });
       setResp(response);
+      console.log(name);
       setNewComment('');
     } catch (error) {
       alert('Houve um erro ao registrar sua pergunta, tente novamente');

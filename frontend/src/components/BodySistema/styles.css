@@ -137,3 +137,10 @@ button.bt_responder {
   border: none;
   font-size: 20px;
 }
+
+.loja {
+  color: #0c29d0;
+}
+.loja:hover {
+  opacity: 0.9;
+}

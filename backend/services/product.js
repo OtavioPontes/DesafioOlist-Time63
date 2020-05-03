@@ -76,10 +76,15 @@ async function findProductComments(productId, filters) {
 }
 
 async function newComment(data, productId) {
-    if (!data.customer_name || !data.description)
+    if (
+        !data.customer_name ||
+        !data.description ||
+        !data.product_id ||
+        !data.product_name
+    )
         throw new Error("Missing data");
 
-    let { customer_name, description } = data;
+    let { customer_name, description, product_id, product_name } = data;
     let comments = await findProductComments(productId);
     let customer_image = userImg;
     let id = comments.length + 1;
@@ -89,6 +94,9 @@ async function newComment(data, productId) {
         customer_image,
         description,
         status: "created",
+        status_tag: "Pendente",
+        product_id,
+        product_name,
         type: "",
         response: "",
     };
