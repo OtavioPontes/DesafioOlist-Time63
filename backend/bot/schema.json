@@ -48,11 +48,53 @@
     {
       "identifier": "modelo",
       "fields": [
-        "modelo",
-        "marca"
+        "modelo"
       ],
       "actions": {
         "say": "Trata-se de um modelo "
+      }
+    },
+    {
+      "identifier": "preco",
+      "fields": [
+        "preco",
+        "valor",
+        "quanto custa",
+        "custo",
+        "desconto"
+      ],
+      "actions": {
+        "say": "Nosso produto tem valor de R$"
+      }
+    },
+    {
+      "identifier": "preco_desconto",
+      "fields": [
+        "desconto"
+      ],
+      "actions": {
+        "say": "Nosso produto está com valor promocional de R$ "
+      }
+    },
+    {
+      "identifier": "marca",
+      "fields": [
+        "marca"
+      ],
+      "actions": {
+        "say": "É um produto da marca "
+      }
+    },
+    {
+      "identifier": "disponibilidade",
+      "fields": [
+        "disponibilidade",
+        "pronta-entrega",
+        "pronta entrega",
+        "estoque"
+      ],
+      "actions": {
+        "say": "O produto esta "
       }
     }
   ]

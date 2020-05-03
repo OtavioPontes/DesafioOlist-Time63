@@ -33,31 +33,31 @@ export default function BodyDetalhesProduto() {
       <div className="card_detalhes">
         <div className="detalhes_produto">
           <div className="imagem_preco">
-            <img src={products.image} alt="camiseta preta" />
+            <img src={products.imagem} alt="camiseta preta" />
 
             <p>
               {Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
-              }).format(products.price)}
+              }).format(products.preco)}
             </p>
             <h1>
               {Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
-              }).format(products.discount_price)}
+              }).format(products.preco_desconto)}
             </h1>
           </div>
           <div className="col_detalhes">
             <div className="detalhes">
-              <h1 className="nome">{products.name}</h1>
+              <h1 className="nome">{products.nome}</h1>
               <h1 className="frete">Frete Grátis</h1>
-              <h1 className="marca">Marca: {products.brand}</h1>
+              <h1 className="marca">Marca: {products.marca}</h1>
               <h1 className="tamanho">Tamanho: {products.tamanho}</h1>
               <h1 className="cor">Cor: {products.cor}</h1>
               <h1 className="material">Material: {products.material}</h1>
               <h1 className="disponibilidade">
-                Disponibilidade: {products.avaliability}
+                Disponibilidade: {products.disponibilidade}
               </h1>
             </div>
             <button className="comprar">Comprar</button>
