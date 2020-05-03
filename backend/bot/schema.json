@@ -1,0 +1,102 @@
+{
+  "tasks": [
+    {
+      "identifier": "genero",
+      "fields": [
+        "genero",
+        "sexo",
+        "feminino",
+        "masculino"
+      ],
+      "actions": {
+        "say": "Disponibilizamos o produto para o gênero "
+      }
+    },
+    {
+      "identifier": "material",
+      "fields": [
+        "material",
+        "tecido",
+        "feito"
+      ],
+      "actions": {
+        "say": "O produto é feito em "
+      }
+    },
+    {
+      "identifier": "tamanho",
+      "fields": [
+        "tamanho",
+        "medidas",
+        "comprimento"
+      ],
+      "actions": {
+        "say": "Segue os tamanhos disponíveis: "
+      }
+    },
+    {
+      "identifier": "cor",
+      "fields": [
+        "cor",
+        "cores",
+        "coloração"
+      ],
+      "actions": {
+        "say": "Segue as cores disponíveis: "
+      }
+    },
+    {
+      "identifier": "modelo",
+      "fields": [
+        "modelo"
+      ],
+      "actions": {
+        "say": "Trata-se de um modelo "
+      }
+    },
+    {
+      "identifier": "preco",
+      "fields": [
+        "preco",
+        "valor",
+        "quanto custa",
+        "custo",
+        "desconto"
+      ],
+      "actions": {
+        "say": "Nosso produto tem valor de R$"
+      }
+    },
+    {
+      "identifier": "preco_desconto",
+      "fields": [
+        "desconto"
+      ],
+      "actions": {
+        "say": "Nosso produto está com valor promocional de R$ "
+      }
+    },
+    {
+      "identifier": "marca",
+      "fields": [
+        "marca"
+      ],
+      "actions": {
+        "say": "É um produto da marca "
+      }
+    },
+    {
+      "identifier": "disponibilidade",
+      "fields": [
+        "disponibilidade",
+        "pronta-entrega",
+        "pronta",
+        "entrega",
+        "estoque"
+      ],
+      "actions": {
+        "say": "O produto esta "
+      }
+    }
+  ]
+}

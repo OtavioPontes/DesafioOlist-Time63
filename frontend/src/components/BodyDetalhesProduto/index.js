@@ -1,13 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import CamisetaPreta from '../../assets/camisetaPreta.jpg';
+
 import User from '../../assets/user.png';
 import Bot from '../../assets/bot.png';
-import Vendedor from '../../assets/vendedor.png';
+
+import api from '../../services/api';
 
 export default function BodyDetalhesProduto() {
+  const [products, setProducts] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+  const [id, setId] = useState('');
+  const [resp, setResp] = useState('');
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    const url = window.location.search;
+    const urlParams = new URLSearchParams(url);
+    const id_type = urlParams.get('id');
+    setId(id_type);
+
+    api.get(`/product/${id_type}`).then((response) => {
+      setProducts(response.data);
+      setName(response.data.nome);
+    });
+
+    api.get(`/product/${id_type}/comment`).then((response) => {
+      setComments(response.data);
+    });
+  }, [resp]);
+
+  async function handleNewComment(e) {
+    e.preventDefault();
+
+    const data = newComment;
+
+    try {
+      const response = await api.post(`/product/${id}/comment`, {
+        customer_name: 'usuario1',
+        description: data,
+        product_id: id,
+        product_name: name,
+      });
+      setResp(response);
+      console.log(name);
+      setNewComment('');
+    } catch (error) {
+      alert('Houve um erro ao registrar sua pergunta, tente novamente');
+    }
+  }
+
   return (
     <div className="background">
       <div className="bt_voltar">
@@ -20,19 +64,32 @@ export default function BodyDetalhesProduto() {
       <div className="card_detalhes">
         <div className="detalhes_produto">
           <div className="imagem_preco">
-            <img src={CamisetaPreta} alt="camiseta preta" />
+            <img src={products.imagem} alt="camiseta preta" />
 
-            <p>R$ 39,99</p>
-            <h1>R$ 29,99</h1>
+            <p>
+              {Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }).format(products.preco)}
+            </p>
+            <h1>
+              {Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }).format(products.preco_desconto)}
+            </h1>
           </div>
           <div className="col_detalhes">
             <div className="detalhes">
-              <h1 className="nome">Produto: Camiseta Básica Preta</h1>
+              <h1 className="nome">{products.nome}</h1>
               <h1 className="frete">Frete Grátis</h1>
-              <h1 className="marca">Marca: Shirtz</h1>
-              <h1 className="cor">Cor: Preta</h1>
-              <h1 className="material">Material: Algodão</h1>
-              <h1 className="disponibilidade">Disponibilidade: Em Estoque</h1>
+              <h1 className="marca">Marca: {products.marca}</h1>
+              <h1 className="tamanho">Tamanho: {products.tamanho}</h1>
+              <h1 className="cor">Cor: {products.cor}</h1>
+              <h1 className="material">Material: {products.material}</h1>
+              <h1 className="disponibilidade">
+                Disponibilidade: {products.disponibilidade}
+              </h1>
             </div>
             <button className="comprar">Comprar</button>
           </div>
@@ -40,42 +97,30 @@ export default function BodyDetalhesProduto() {
       </div>
       <h1>Perguntas e Respostas</h1>
       <div className="card_perguntas">
-        <div className="user">
-          <img src={User} alt="usuario1" />
-          <p>Qual a cor dessa camiseta? </p>
-        </div>
+        {comments.map((comment) => (
+          <div className="user1">
+            <img src={comment.customer_image} alt="usuario1" />
+            <p>{comment.description} </p>
+          </div>
+        ))}
+
         <div className="bot">
           <p>A cor é Preta </p>
           <img src={Bot} alt="bot" />
         </div>
-        <div className="user">
-          <img src={User} alt="usuario1" />
-          <p>Qual a disponibilidade? </p>
-        </div>
-        <div className="bot">
-          <p>O produto está Em Estoque ! </p>
-          <img src={Bot} alt="bot" />
-        </div>
-        <div className="user">
-          <img src={User} alt="usuario1" />
-          <p>
-            Eu moro em Goiânia, se fizer o pedido hj o produto chega em quantos
-            dias?{' '}
-          </p>
-        </div>
-        <div className="bot">
-          <p>Bom dia, usuário1. O produto chega em 3 dias por Sedex. </p>
-          <img src={Vendedor} alt="vendedor1" />
-        </div>
       </div>
       <h1>Digite sua Pergunta:</h1>
+
       <div className="faca_sua_pergunta">
-        <textarea
-          name=""
-          id=""
-          placeholder="Mande aqui sua dúvida..."
-        ></textarea>
-        <button>Enviar</button>
+        <form onSubmit={handleNewComment}>
+          <textarea
+            id="textarea_input"
+            placeholder="Mande aqui sua dúvida..."
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+          ></textarea>
+          <button type="submit">Enviar</button>
+        </form>
       </div>
     </div>
   );

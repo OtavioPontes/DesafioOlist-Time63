@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FFF;
+  background-color: #fff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -44,4 +44,29 @@
 
 .sign-up:hover {
   opacity: 0.8;
+}
+
+.toDash button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  position: absolute;
+  left: 60px;
+  top: 40px;
+  width: 130px;
+  padding: 8px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 17px;
+}
+
+.cart {
+  display: flex;
+  position: absolute;
+  right: 75px;
+  top: 80px;
+  cursor: pointer;
+  font-size: 40px;
 }

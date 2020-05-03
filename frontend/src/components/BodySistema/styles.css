@@ -1,4 +1,4 @@
-div.background {
+.background {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +7,7 @@ div.background {
   background-color: whitesmoke;
 }
 
-div.card_group {
+.card_group {
   width: 85vw;
   display: flex;
   flex-direction: column;
@@ -20,23 +20,29 @@ div.card_group {
   border-radius: 8px;
   box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.1);
 }
-section.entrada {
+.entrada {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-section.entrada h1 {
+.entrada h1 {
   font-size: 45px;
+  font-weight: normal;
 }
-section.entrada p {
+.entrada p {
   font-size: 45px;
   margin-left: 10px;
-  font-weight: 200;
+  font-weight: 500;
+}
+.bem_vindo {
+  margin-top: 30px;
+  font-weight: lighter;
+  color: #0c29d0;
 }
 
-section.filtros {
+.filtros {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -46,7 +52,7 @@ section.filtros {
   margin-bottom: 3rem;
 }
 
-section.filtros select {
+.filtros select {
   width: 7rem;
   height: 40px;
   margin-right: 1em;
@@ -61,7 +67,7 @@ section.filtros select {
   text-align-last: center;
 }
 
-section.filtros button.bt_submit {
+.bt_submit {
   width: 80px;
   height: 40px;
   margin-left: 1em;
@@ -72,16 +78,13 @@ section.filtros button.bt_submit {
   background-color: #349cdd;
 }
 
-section.perguntas {
-}
-
-section.perguntas p.total {
+p.total {
   display: flex;
   justify-content: flex-end;
   align-self: flex-end;
 }
 
-section.perguntas div.pergunta {
+.pergunta {
   background-color: #ebebeb;
   width: 40vw;
   padding: 20px 30px 20px 30px;
@@ -89,25 +92,25 @@ section.perguntas div.pergunta {
   box-shadow: -4px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-section.perguntas div.pergunta + div.pergunta {
+div.pergunta + div.pergunta {
   margin-top: 50px;
 }
 
-section.perguntas div.pergunta p {
+.pergunta p {
   margin: 10px 0 10px 0;
 }
 
-section.perguntas div.pergunta label {
+.pergunta label {
   margin-right: 10px;
 }
 
-section.perguntas div.pergunta input {
+.pergunta input {
   width: 20px;
   height: 20px;
   cursor: pointer;
 }
 
-section.perguntas div.pergunta button {
+.pergunta button {
   margin: 0 5px 0 5px;
   width: 1fr;
   padding: 7px;
@@ -117,7 +120,7 @@ section.perguntas div.pergunta button {
   font-weight: 600;
 }
 
-section.perguntas div.pergunta button.bt_responder {
+button.bt_responder {
   position: relative;
   float: right;
   width: 85px;
@@ -126,7 +129,7 @@ section.perguntas div.pergunta button.bt_responder {
   color: white;
 }
 
-section.indice button {
+.indice button {
   margin-top: 3em;
   width: 150px;
   height: 40px;
@@ -135,24 +138,9 @@ section.indice button {
   font-size: 20px;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+.loja {
+  color: #0c29d0;
 }
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+.loja:hover {
+  opacity: 0.9;
 }

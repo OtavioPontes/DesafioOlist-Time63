@@ -10,15 +10,12 @@
   -webkit-font-smoothing: antialiased;
 }
 
-button {
-  cursor: pointer;
-}
-
 body {
   background: #ebebeb;
 }
 
 button {
+  cursor: pointer;
   transition: filter 0.2s;
 }
 

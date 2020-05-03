@@ -1,97 +1,156 @@
 {
-    "products": [
+  "products": [
+    {
+      "id": 1,
+      "attributes": {
+        "attribute_name": "Data Publicação",
+        "attribute_value": "28/02/2014"
+      },
+      "nome": "Camiseta Básica Preta",
+      "descricao": "Camiseta masculina básica tecido 100% algodão, gola redonda e arejada.",
+      "genero": "Masculino",
+      "material": "Algodão",
+      "tamanho": [
+        "P/",
+        "M/",
+        "G"
+      ],
+      "cor": "Preta",
+      "modelo": "Gola redonda",
+      "marca": "Aramis",
+      "preco": 39.9,
+      "preco_desconto": 29.9,
+      "disponibilidade": "Em Estoque",
+      "estoque": 100,
+      "envio_gratis": true,
+      "imagem": "https://docs.google.com/uc?id=1l6as7XQgwNYNgcv68vnc1sIksEdqMJoH",
+      "comments": [
         {
-            "id": 1,
-            "attributes": {
-                "attribute_name": "Data Publicação",
-                "attribute_value": "28/02/2014"
-            },
-            "name": "Camiseta Básica Preta",
-            "description": "Camiseta masculina básica tecido 100% algodão, gola redonda e arejada.",
-            "features": {
-                "genero": "Masculino",
-                "material": "Algodão",
-                "tamanho": ["P", "M", "G"],
-                "cor": "preta",
-                "modelo": "gola redonda"
-            },
-            "brand": "aramis",
-            "price": 29.9,
-            "stock": 100,
-            "free_shipping": true,
-            "image": "https://docs.google.com/uc?id=1l6as7XQgwNYNgcv68vnc1sIksEdqMJoH",
-            "comments": [
-                {
-                    "id": 1,
-                    "customer_name": "João",
-                    "description": "Tem da cor branca?",
-                    "status": "created"
-                },
-                {
-                    "id": 2,
-                    "customer_name": "Fernando",
-                    "description": "Possui o produto a pronta entrega?",
-                    "status": "closed"
-                }
-            ]
+          "id": 1,
+          "customer_name": "João",
+          "customer_image": "https://drive.google.com/uc?export=download&id=1BF_In0UOeRniC4Yo2SkER4c6NKDyvmaH",
+          "description": "Tem da cor branca?",
+          "status": "created",
+          "status_tag": "Pendente",
+          "product_id": "1",
+          "product_name": "Camiseta Básica Preta",
+          "type": "simple",
+          "response": ""
         },
         {
-            "id": 2,
-            "attributes": {
-                "attribute_name": "Data Publicação",
-                "attribute_value": "28/02/2014"
-            },
-            "name": "Calça Jeans Bege",
-            "description": "Calças Jeans Masculinas SLIM{\n}MODELO SLIM - veste mais justa{\n}FOTOS MERAMENTE ILUSTRATIVAS{\n}Modelos de corte com 98 (porcento) de algodão e 2 (porcento) de lycra",
-            "features": {
-                "genero": "Masculino",
-                "material": "98% Algodão e 2% Lycra",
-                "tamanho": [36, 38, 40, 42],
-                "cor": "bege",
-                "modelo": "slim"
-            },
-            "brand": "aramis",
-            "price": 79.9,
-            "stock": 50,
-            "free_shipping": false,
-            "image": "https://docs.google.com/uc?id=1LLM32WlJSYBSXvOzwytM-o5XDkDSn5lY",
-            "comments": [
-                {
-                    "id": 1,
-                    "customer_name": "José",
-                    "description": "Tem o tamanho 40?",
-                    "status": "created"
-                }
-            ]
+          "id": 2,
+          "customer_name": "Fernando",
+          "customer_image": "https://drive.google.com/uc?export=download&id=1zptf5GN2cpjkS25q8LFlxG6v07SkCtFM",
+          "description": "Possui o produto a pronta entrega?",
+          "status": "created",
+          "status_tag": "Pendente",
+          "product_id": "1",
+          "product_name": "Camiseta Básica Preta",
+          "type": "complex",
+          "response": ""
         },
         {
-            "id": 3,
-            "attributes": {
-                "attribute_name": "Data Publicação",
-                "attribute_value": "28/02/2014"
-            },
-            "name": "Boné Aba Reta",
-            "description": "Boné aba reta cinza.{\n}Marca: LEOPARD{\n}Tamanho único (adulto){\n}Circunferência: 58 cm (+/- 4 cm regulagem){\n}Medidas: Altura:12 cm;{\n}Largura :18 cm;{\n}Aba :7 cm",
-            "features": {
-                "genero": "",
-                "material": "Poliéster",
-                "tamanho": ["G"],
-                "cor": "cinza",
-                "modelo": "aba reta"
-            },
-            "brand": "aramis",
-            "price": 49.9,
-            "stock": 50,
-            "free_shipping": true,
-            "image": "https://docs.google.com/uc?id=1luujSMyPZTycEPXmpuyX5uaDuWiXmq-F",
-            "comments": [
-                {
-                    "id": 1,
-                    "customer_name": "Eduardo",
-                    "description": "Tem de outras cores?",
-                    "status": "created"
-                }
-            ]
+          "id": 3,
+          "customer_name": "usuario1",
+          "customer_image": "https://drive.google.com/uc?export=download&id=1zptf5GN2cpjkS25q8LFlxG6v07SkCtFM",
+          "description": "Tem de Dryfit tb?",
+          "status": "created",
+          "status_tag": "Pendente",
+          "product_id": "1",
+          "product_name": "Camiseta Básica Preta",
+          "type": "complex",
+          "response": ""
+        },
+        {
+          "id": 4,
+          "customer_name": "usuario1",
+          "customer_image": "https://drive.google.com/uc?export=download&id=1zptf5GN2cpjkS25q8LFlxG6v07SkCtFM",
+          "description": "teste 1",
+          "status": "created",
+          "status_tag": "Pendente",
+          "product_id": "1",
+          "product_name": "Camiseta Básica Preta",
+          "type": "complex",
+          "response": ""
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "attribute_name": "Data Publicação",
+        "attribute_value": "28/02/2014"
+      },
+      "nome": "Calça Jeans Bege",
+      "descricao": "Calças Jeans Masculinas SLIM{\n}MODELO SLIM - veste mais justa{\n}FOTOS MERAMENTE ILUSTRATIVAS{\n}Modelos de corte com 98 (porcento) de algodão e 2 (porcento) de lycra",
+      "genero": "Masculino",
+      "material": "98% Algodão e 2% Lycra",
+      "tamanho": [
+        "36/",
+        "38/",
+        "40/",
+        "42"
+      ],
+      "cor": "Bege",
+      "modelo": "Slim",
+      "marca": "Aramis",
+      "preco": 89.9,
+      "preco_desconto": 79.9,
+      "disponibilidade": "Em Estoque",
+      "estoque": 50,
+      "envio_gratis": false,
+      "imagem": "https://drive.google.com/uc?export=download&id=1ZpFPIdKBUGOFSCahA_GBJqfJYM8vgh4M",
+      "comments": [
+        {
+          "id": 1,
+          "customer_name": "José",
+          "customer_image": "https://drive.google.com/uc?export=download&id=1BF_In0UOeRniC4Yo2SkER4c6NKDyvmaH",
+          "description": "Tem o tamanho 40?",
+          "status": "created",
+          "status_tag": "Pendente",
+          "product_id": "2",
+          "product_name": "Calça Jeans Bege",
+          "type": "simple",
+          "response": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "attributes": {
+        "attribute_name": "Data Publicação",
+        "attribute_value": "28/02/2014"
+      },
+      "nome": "Boné Aba Reta",
+      "descricao": "Boné aba reta cinza.{\n}Marca: LEOPARD{\n}Tamanho único (adulto){\n}Circunferência: 58 cm (+/- 4 cm regulagem){\n}Medidas: Altura:12 cm;{\n}Largura :18 cm;{\n}Aba :7 cm",
+      "genero": "",
+      "material": "Poliéster",
+      "tamanho": [
+        "G"
+      ],
+      "cor": "Cinza",
+      "modelo": "aba reta",
+      "marca": "Aramis",
+      "preco": 59.9,
+      "preco_desconto": 49.9,
+      "estoque": 50,
+      "envio_gratis": true,
+      "disponibilidade": "Em Estoque",
+      "imagem": "https://drive.google.com/uc?export=download&id=1Ub36myCFB3SBuvc3e9W2-vMHKcqX7huL",
+      "comments": [
+        {
+          "id": 1,
+          "customer_name": "Eduardo",
+          "customer_image": "https://drive.google.com/uc?export=download&id=1AYA5qT8vRdvu7aewbkM321JAbcOGkGiO",
+          "description": "Tem de outras cores?",
+          "status": "created",
+          "status_tag": "Pendente",
+          "product_id": "3",
+          "product_name": "Boné Aba Reta",
+          "type": "simple",
+          "response": ""
+        }
+      ]
+    }
+  ]
 }

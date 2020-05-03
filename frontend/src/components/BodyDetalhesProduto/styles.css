@@ -13,7 +13,8 @@
   margin-left: 100px;
   margin-top: 50px;
   background-color: white;
-  padding: 12px;
+  padding: 10px;
+  border: 2px solid black;
   border-radius: 15px;
   align-self: flex-start;
 
@@ -66,11 +67,10 @@
 }
 
 .col_detalhes button {
-  width: 130px;
-  height: 40px;
+  width: 160px;
+  height: 60px;
   margin-top: 20px;
   background-color: transparent;
-  border-style: none;
   border: 2px solid black;
   border-radius: 15px;
   font-size: 17px;
@@ -89,7 +89,7 @@
 }
 
 .imagem_preco img {
-  width: 200px;
+  width: 270px;
   margin-bottom: 20px;
 }
 
@@ -104,20 +104,28 @@
   font-weight: 700;
 }
 
-.detalhes h1 {
-  margin-bottom: 3px;
+.detalhes .nome {
+  font-weight: bold;
+  font-size: 30px;
 }
 
-.frete {
+.detalhes h1 {
+  margin-bottom: 3px;
+  font-weight: 300;
+}
+
+.detalhes .frete {
   color: #1ba305;
+  font-weight: 500;
 }
 
 .marca {
   margin-top: 30px;
 }
 
-.disponibilidade {
+.detalhes .disponibilidade {
   margin-top: 30px;
+  font-weight: 500;
 }
 
 .card_perguntas {
@@ -132,19 +140,22 @@
   border-radius: 10px;
 }
 
-.user {
+.user1 {
   display: flex;
+
   align-items: center;
+
   justify-content: flex-start;
   margin-bottom: 20px;
 }
 
-.user img {
+.user1 img {
   width: 70px;
   margin-right: 20px;
+  border-radius: 50px;
 }
 
-.user p {
+.user1 p {
   font-size: 20px;
   background-color: rgba(0, 0, 0, 0.1);
   width: 1fr;
@@ -173,29 +184,30 @@
   border-radius: 20px;
 }
 
-.faca_sua_pergunta {
+.faca_sua_pergunta form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 100px;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 .faca_sua_pergunta textarea {
   border: none;
   margin-bottom: 20px;
   padding: 10px;
-  width: 40vw;
+  width: 30vw;
   height: 120px;
   font-size: 17px;
+  border-radius: 10px;
 }
 
 .faca_sua_pergunta button {
   width: 130px;
-  height: 40px;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.25);
+  height: 50px;
   border-radius: 15px;
   font-size: 17px;
   font-weight: 500;
+  border: 2px solid black;
+  background-color: white;
 }
