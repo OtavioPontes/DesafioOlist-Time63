@@ -18,14 +18,10 @@ body {
   background: #ebebeb;
 }
 
-input, button, textarea {
-    font: 400 18px Oswald, sans-serif;
-}
-
-.button {
+button {
   transition: filter 0.2s;
 }
 
-.button:hover {
+button:hover {
   opacity: 0.8;
 }

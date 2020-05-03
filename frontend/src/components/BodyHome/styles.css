@@ -63,9 +63,5 @@
   border-color: #000;
   background-color: #fff;
   color: #000;
-  transition: filter 0.2s;
 }
 
-.button:hover {
-  filter: brightness(93%);
-}
