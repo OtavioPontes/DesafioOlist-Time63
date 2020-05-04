@@ -24,6 +24,17 @@ function findTagComment(message) {
   return prop
 }
 
+function findTags() {
+  let data = fs.readFileSync(path.join(__dirname, "schema.json"));
+  let schema = JSON.parse(data).tasks;
+  let tags = []
+  schema.forEach((s) => {
+    tags.push(s.identifier)
+  });
+
+  return tags
+}
+
 function _findContext(message) {
   let data = fs.readFileSync(path.join(__dirname, "schema.json"));
   let schema = JSON.parse(data).tasks;
@@ -49,5 +60,6 @@ function _findContext(message) {
 
 module.exports = {
   handleMessage,
-  findTagComment
+  findTagComment,
+  findTags
 };
