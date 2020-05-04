@@ -84,31 +84,13 @@ export default function BodySistema() {
     api.get('/product').then((response) => {
       setProducts(response.data);
     });
-  }, [newResponse]);
+  }, []);
 
   useEffect(() => {
     api.post('/product/comment/list').then((response) => {
       setComments(response.data);
     });
   }, [products]);
-
-  async function handleNewResponse(e) {
-    e.preventDefault();
-
-    const data = newResponse;
-
-    try {
-      const response = await api.post(
-        `product/${singleComment.product_id}/comment/${singleComment.id}/response`,
-        {
-          response: newResponse,
-        }
-      );
-    } catch (error) {
-      alert('Houve um erro ao registrar sua resposta, tente novamente');
-    }
-    closeModal();
-  }
 
   return (
     <div className="background">
@@ -183,11 +165,7 @@ export default function BodySistema() {
               <p className="Tags">
                 Tags: <button>cor</button>
                 <button>camiseta</button>
-                <button
-                  class="bt_responder"
-                  id={comment.product_name + comment.id}
-                  onClick={() => openModal(comment)}
-                >
+                <button class="bt_responder" id="bt_responder">
                   Responder
                 </button>
               </p>
@@ -197,43 +175,10 @@ export default function BodySistema() {
 
         <div id="myModal" class="modal">
           <div class="modal-content">
-            <div className="pergunta_modal">
-              <h1>Pergunta: {singleComment.description}</h1>
-              <p className="Loja">
-                Loja:{' '}
-                <Link
-                  to={`/detalheProduto?id=${singleComment.product_id}`}
-                  className="loja"
-                  target="_blank"
-                >
-                  Chameguinho Store
-                </Link>{' '}
-              </p>
-              <p className="Usuario">Usuário: {singleComment.customer_name}</p>
-              <p className="Produto">Produto: {singleComment.product_name}</p>
-              <p classname="status">Status: {singleComment.status_tag}</p>
-              <p className="Tags">
-                Tags: <button>cor</button>
-                <button>camiseta</button>
-              </p>
-              <section className="resposta">
-                <h1 className="sua_resposta">Sua Resposta:</h1>
-                <textarea
-                  placeholder="Digite aqui sua resposta"
-                  value={newResponse}
-                  onChange={(e) => setNewResponse(e.target.value)}
-                ></textarea>
-                <button
-                  className="bt_responder_modal"
-                  id="bt_responder_modal"
-                  onClick={handleNewResponse}
-                >
-                  Responder
-                </button>
-              </section>
-            </div>
+            <p></p>
           </div>
         </div>
+
         <section className="indice"></section>
       </div>
     </div>

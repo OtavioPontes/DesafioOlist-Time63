@@ -33,6 +33,8 @@ async function findComments(filters) {
         });
     });
 
+    console.log(filters);
+
     if (filters && Object.keys(filters).length > 0) {
         Object.keys(filters).forEach((item) => {
             if (item) {
@@ -118,12 +120,12 @@ async function commentResponse(productId, commentId, answer) {
     if (!answer) throw new Error("Answer is empty");
 
     return _getProductComment(productId, commentId)
-        .assign({
-            response: answer,
-            status: "closed",
-            status_tag: "Respondida",
-        })
+        .assign({ response: answer, status: "closed" })
         .write();
+}
+
+async function findTags() {
+    return bot.findTags();
 }
 
 function _getProduct(id) {
@@ -143,4 +145,5 @@ module.exports = {
     findProductComments,
     newComment,
     commentResponse,
+    findTags,
 };
