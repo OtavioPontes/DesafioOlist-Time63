@@ -14,10 +14,19 @@ export default function BodySistema() {
 
   function Search(e) {
     e.preventDefault();
+
+    const status = document.getElementById('status');
+    var finalStatus = status.options[status.selectedIndex].value;
+    const complexidade = document.getElementById('tipo_pergunta');
+    var finalComplexidade =
+      complexidade.options[complexidade.selectedIndex].value;
+    console.log(finalComplexidade);
+    console.log(finalStatus);
+
     api
-      .get('/product/comment/list', {
-        type: 'complex',
-        status: 'created',
+      .post('/product/comment/list', {
+        status: finalStatus,
+        type: finalComplexidade,
       })
       .then((response) => {
         setComments(response.data);
@@ -78,7 +87,7 @@ export default function BodySistema() {
   }, [newResponse]);
 
   useEffect(() => {
-    api.get('/product/comment/list').then((response) => {
+    api.post('/product/comment/list').then((response) => {
       setComments(response.data);
     });
   }, [products]);
@@ -130,18 +139,18 @@ export default function BodySistema() {
               id="tipo_pergunta"
               placeholder="Tipo de pergunta"
             >
-              <option selected disabled hidden>
+              <option selected disabled hidden value="">
                 Complexidade
               </option>
-              <option value="simples">Simples</option>
-              <option value="complexa">Complexa</option>
+              <option value="simple">Simples</option>
+              <option value="complex">Complexa</option>
             </select>
             <select name="status" id="status" placeholder="Status">
-              <option selected disabled hidden>
+              <option selected disabled hidden value="">
                 Status
               </option>
-              <option value="pendente">Pendente</option>
-              <option value="respondida">Respondida</option>
+              <option value="created">Pendente</option>
+              <option value="closed">Respondida</option>
             </select>
             <select name="tags" id="tags" placeholder="Tags">
               <option selected disabled hidden>
