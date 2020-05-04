@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FiHelpCircle } from 'react-icons/fi';
 import api from '../../services/api';
 
@@ -11,6 +11,18 @@ export default function BodySistema() {
   const [singleComment, setsingleComment] = useState([]);
   const [newResponse, setNewResponse] = useState('');
   const [btState, setBtState] = useState(false);
+
+  function Search(e) {
+    e.preventDefault();
+    api
+      .get('/product/comment/list', {
+        type: 'complex',
+        status: 'created',
+      })
+      .then((response) => {
+        setComments(response.data);
+      });
+  }
 
   function openHelper() {
     var helperModal = document.getElementById('help_modal');
@@ -112,7 +124,7 @@ export default function BodySistema() {
           <button id="help_button" className="help_button" onClick={openHelper}>
             <FiHelpCircle className="help_icon" />
           </button>
-          <form>
+          <form onSubmit={Search}>
             <select
               name="tipo_pergunta"
               id="tipo_pergunta"
@@ -121,18 +133,24 @@ export default function BodySistema() {
               <option selected disabled hidden>
                 Complexidade
               </option>
+              <option value="simples">Simples</option>
+              <option value="complexa">Complexa</option>
             </select>
             <select name="status" id="status" placeholder="Status">
               <option selected disabled hidden>
                 Status
               </option>
+              <option value="pendente">Pendente</option>
+              <option value="respondida">Respondida</option>
             </select>
             <select name="tags" id="tags" placeholder="Tags">
               <option selected disabled hidden>
                 Tags
               </option>
             </select>
-            <button className="bt_submit">Buscar</button>
+            <button className="bt_submit" type="submit">
+              Buscar
+            </button>
           </form>
         </section>
         <section className="perguntas">
