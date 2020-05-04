@@ -45,7 +45,6 @@ export default function BodyDetalhesProduto() {
         product_name: name,
       });
       setResp(response);
-      console.log(name);
       setNewComment('');
     } catch (error) {
       alert('Houve um erro ao registrar sua pergunta, tente novamente');
@@ -98,16 +97,17 @@ export default function BodyDetalhesProduto() {
       <h1>Perguntas e Respostas</h1>
       <div className="card_perguntas">
         {comments.map((comment) => (
-          <div className="user1">
-            <img src={comment.customer_image} alt="usuario1" />
-            <p>{comment.description} </p>
-          </div>
+          <>
+            <div className="user1">
+              <img src={comment.customer_image} alt="usuario1" />
+              <p>{comment.description} </p>
+            </div>
+            <div className="bot">
+              <p>{comment.response} </p>
+              <img src={Bot} alt="bot" />
+            </div>
+          </>
         ))}
-
-        <div className="bot">
-          <p>A cor é Preta </p>
-          <img src={Bot} alt="bot" />
-        </div>
       </div>
       <h1>Digite sua Pergunta:</h1>
 

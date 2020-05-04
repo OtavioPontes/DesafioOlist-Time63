@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import { FiHelpCircle } from 'react-icons/fi';
+import { FaArrowLeft } from 'react-icons/fa';
 import api from '../../services/api';
 
 export default function BodySistema() {
@@ -11,6 +12,7 @@ export default function BodySistema() {
   const [singleComment, setsingleComment] = useState([]);
   const [newResponse, setNewResponse] = useState('');
   const [btState, setBtState] = useState(false);
+  const [tags, setTags] = useState(['']);
 
   function Search(e) {
     e.preventDefault();
@@ -20,17 +22,36 @@ export default function BodySistema() {
     const complexidade = document.getElementById('tipo_pergunta');
     var finalComplexidade =
       complexidade.options[complexidade.selectedIndex].value;
-    console.log(finalComplexidade);
-    console.log(finalStatus);
+    const tag = document.getElementById('tags');
+    var finalTag = tag.options[tag.selectedIndex].value;
 
-    api
-      .post('/product/comment/list', {
-        status: finalStatus,
-        type: finalComplexidade,
-      })
-      .then((response) => {
-        setComments(response.data);
-      });
+    if (finalStatus == '') {
+      api
+        .post('/product/comment/list', {
+          type: finalComplexidade,
+        })
+        .then((response) => {
+          setComments(response.data);
+        });
+    } else if (finalComplexidade == '') {
+      api
+        .post('/product/comment/list', {
+          status: finalStatus,
+        })
+        .then((response) => {
+          setComments(response.data);
+        });
+    } else {
+      api
+        .post('/product/comment/list', {
+          status: finalStatus,
+          type: finalComplexidade,
+          tag: finalTag,
+        })
+        .then((response) => {
+          setComments(response.data);
+        });
+    }
   }
 
   function openHelper() {
@@ -41,11 +62,9 @@ export default function BodySistema() {
       if (btState == false) {
         helperModal.style.display = 'flex';
         setBtState(true);
-        console.log(btState);
       } else {
         helperModal.style.display = 'none';
         setBtState(false);
-        console.log(btState);
       }
     };
   }
@@ -84,6 +103,9 @@ export default function BodySistema() {
     api.get('/product').then((response) => {
       setProducts(response.data);
     });
+    api.get('/product/tags').then((response) => {
+      setTags(response.data);
+    });
   }, []);
 
   useEffect(() => {
@@ -95,6 +117,12 @@ export default function BodySistema() {
   return (
     <div className="background">
       <div className="card_group">
+        <div className="bt_voltar">
+          <a href="/sistema" className="link_voltar">
+            <FaArrowLeft />
+            <p>Voltar</p>
+          </a>
+        </div>
         <section className="entrada">
           <h1>Olá,</h1>
           <p>Vendedor 1</p>
@@ -135,9 +163,12 @@ export default function BodySistema() {
               <option value="closed">Respondida</option>
             </select>
             <select name="tags" id="tags" placeholder="Tags">
-              <option selected disabled hidden>
+              <option selected disabled hidden value="">
                 Tags
               </option>
+              {tags.map((tag) => (
+                <option value={tag}>{tag}</option>
+              ))}
             </select>
             <button className="bt_submit" type="submit">
               Buscar

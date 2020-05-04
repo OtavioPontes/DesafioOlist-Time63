@@ -33,8 +33,6 @@ async function findComments(filters) {
         });
     });
 
-    console.log(filters);
-
     if (filters && Object.keys(filters).length > 0) {
         Object.keys(filters).forEach((item) => {
             if (item) {
@@ -99,6 +97,7 @@ async function newComment(data, productId) {
         status_tag: "Pendente",
         product_id,
         product_name,
+        tag: "",
         type: "",
         response: "",
     };
@@ -106,6 +105,7 @@ async function newComment(data, productId) {
     await _getProduct(productId).get("comments").push(comment).write();
 
     let response = bot.handleMessage(description, await findById(productId));
+
     if (response) {
         _getProductComment(productId, id)
             .assign({ response, status: "closed", type: "simple" })
