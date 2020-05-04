@@ -8,8 +8,7 @@ import api from '../../services/api';
 export default function BodySistema() {
   const [products, setProducts] = useState([]);
   const [comments, setComments] = useState([]);
-  const [index, setIndex] = useState();
-  const [singleComment, setsingleComment] = useState([]);
+  const [singleComment, setSingleComment] = useState({});
   const [newResponse, setNewResponse] = useState('');
   const [btState, setBtState] = useState(false);
   const [tags, setTags] = useState(['']);
@@ -25,7 +24,7 @@ export default function BodySistema() {
     const tag = document.getElementById('tags');
     var finalTag = tag.options[tag.selectedIndex].value;
 
-    if (finalStatus == '') {
+    if (finalStatus == '' && finalTag == '') {
       api
         .post('/product/comment/list', {
           type: finalComplexidade,
@@ -33,7 +32,7 @@ export default function BodySistema() {
         .then((response) => {
           setComments(response.data);
         });
-    } else if (finalComplexidade == '') {
+    } else if (finalComplexidade == '' && finalTag == '') {
       api
         .post('/product/comment/list', {
           status: finalStatus,
@@ -41,17 +40,34 @@ export default function BodySistema() {
         .then((response) => {
           setComments(response.data);
         });
-    } else {
+    } else if (finalTag == '') {
       api
         .post('/product/comment/list', {
           status: finalStatus,
           type: finalComplexidade,
+        })
+        .then((response) => {
+          setComments(response.data);
+        });
+    } else if (finalComplexidade == '' && finalStatus == '') {
+      api
+        .post('/product/comment/list', {
           tag: finalTag,
         })
         .then((response) => {
           setComments(response.data);
         });
     }
+  }
+
+  function SearchTag(tag) {
+    api
+      .post('/product/comment/list', {
+        tag: tag,
+      })
+      .then((response) => {
+        setComments(response.data);
+      });
   }
 
   function openHelper() {
@@ -70,7 +86,7 @@ export default function BodySistema() {
   }
 
   function openModal(comment) {
-    setsingleComment(comment);
+    setSingleComment(comment);
 
     var modal = document.getElementById('myModal');
 
@@ -99,6 +115,26 @@ export default function BodySistema() {
     };
   }
 
+  async function handleNewResponse(e) {
+    e.preventDefault();
+
+    const data = newResponse;
+
+    try {
+      const response = await api.post(
+        `product/${singleComment.product_id}/comment/${singleComment.id}/response`,
+        {
+          response: newResponse,
+        }
+      );
+    } catch (error) {
+      alert('Houve um erro ao registrar sua resposta, tente novamente');
+    }
+
+    closeModal();
+    window.location.reload(true);
+  }
+
   useEffect(() => {
     api.get('/product').then((response) => {
       setProducts(response.data);
@@ -106,13 +142,13 @@ export default function BodySistema() {
     api.get('/product/tags').then((response) => {
       setTags(response.data);
     });
-  }, []);
+  }, [newResponse]);
 
   useEffect(() => {
     api.post('/product/comment/list').then((response) => {
       setComments(response.data);
     });
-  }, [products]);
+  }, [newResponse, products]);
 
   return (
     <div className="background">
@@ -194,9 +230,15 @@ export default function BodySistema() {
               <p className="Produto">Produto: {comment.product_name}</p>
               <p classname="status">Status: {comment.status_tag}</p>
               <p className="Tags">
-                Tags: <button>cor</button>
-                <button>camiseta</button>
-                <button class="bt_responder" id="bt_responder">
+                Tag:{' '}
+                <button onClick={() => SearchTag(comment.tag)}>
+                  {comment.tag}
+                </button>
+                <button
+                  class="bt_responder"
+                  id={comment.product_name + comment.id}
+                  onClick={() => openModal(comment)}
+                >
                   Responder
                 </button>
               </p>
@@ -206,7 +248,40 @@ export default function BodySistema() {
 
         <div id="myModal" class="modal">
           <div class="modal-content">
-            <p></p>
+            <div className="pergunta_modal">
+              <h1>Pergunta: {singleComment.description}</h1>
+              <p className="Loja">
+                Loja:{' '}
+                <Link
+                  to={`/detalheProduto?id=${singleComment.product_id}`}
+                  className="loja"
+                  target="_blank"
+                >
+                  Chameguinho Store
+                </Link>{' '}
+              </p>
+              <p className="Usuario">Usuário: {singleComment.customer_name}</p>
+              <p className="Produto">Produto: {singleComment.product_name}</p>
+              <p classname="status">Status: {singleComment.status_tag}</p>
+              <p className="Tags">
+                Tags: <button>{singleComment.tag}</button>
+              </p>
+              <section className="resposta">
+                <h1 className="sua_resposta">Sua Resposta:</h1>
+                <textarea
+                  placeholder={singleComment.reponse}
+                  value={newResponse}
+                  onChange={(e) => setNewResponse(e.target.value)}
+                ></textarea>
+                <button
+                  className="bt_responder_modal"
+                  id="bt_responder_modal"
+                  onClick={handleNewResponse}
+                >
+                  Responder
+                </button>
+              </section>
+            </div>
           </div>
         </div>
 
