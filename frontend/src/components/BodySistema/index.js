@@ -185,6 +185,8 @@ export default function BodySistema() {
             <p className="topic">Status:</p>
             <p>Respondida: Respondida por você</p>
             <p>Pendente: Não Respondida por você</p>
+            <p className="topic">Tags:</p>
+            <p>São os tópicos abordados na pergunta</p>
           </div>
           <button id="help_button" className="help_button" onClick={openHelper}>
             <FiHelpCircle className="help_icon" />
