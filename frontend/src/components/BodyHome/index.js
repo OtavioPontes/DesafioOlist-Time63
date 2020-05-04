@@ -22,7 +22,7 @@ export default function BodyHome() {
               <img src={product.imagem} alt="Camisa" />
 
               <div className="details">
-                <h3>{product.nome}</h3>
+                <h3>{product.name}</h3>
                 <strike>
                   {Intl.NumberFormat('pt-BR', {
                     style: 'currency',

@@ -119,11 +119,7 @@ async function commentResponse(productId, commentId, answer) {
 	if (!answer) throw new Error("Answer is empty");
 
 	return _getProductComment(productId, commentId)
-		.assign({
-			response: answer,
-			status: "closed",
-			status_tag: "Respondida",
-		})
+		.assign({ response: answer, status: "closed" })
 		.write();
 }
 
