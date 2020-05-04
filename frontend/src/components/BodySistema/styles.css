@@ -42,6 +42,42 @@
   color: #0c29d0;
 }
 
+.help_icon {
+  font-size: 30px;
+  margin-right: 30px;
+}
+
+.help_button {
+  background-color: transparent;
+  border: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.help_modal {
+  display: none;
+  position: absolute;
+  width: 1fr;
+  left: 17em;
+  top: 10em;
+  flex-direction: column;
+  background-color: whitesmoke;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 20px;
+  border: none;
+}
+
+.help_modal h1 {
+  margin-bottom: 10px;
+}
+
+.help_modal .topic {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
 .filtros {
   display: flex;
   flex-direction: row;

@@ -1,12 +1,75 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
+import { FiHelpCircle } from 'react-icons/fi';
 import api from '../../services/api';
 
 export default function BodySistema() {
   const [products, setProducts] = useState([]);
   const [comments, setComments] = useState([]);
   const [index, setIndex] = useState();
+  const [singleComment, setsingleComment] = useState([]);
+  const [newResponse, setNewResponse] = useState('');
+  const [btState, setBtState] = useState(false);
+
+  function Search(e) {
+    e.preventDefault();
+    api
+      .get('/product/comment/list', {
+        type: 'complex',
+        status: 'created',
+      })
+      .then((response) => {
+        setComments(response.data);
+      });
+  }
+
+  function openHelper() {
+    var helperModal = document.getElementById('help_modal');
+    var btModal = document.getElementById('help_button');
+
+    btModal.onclick = function () {
+      if (btState == false) {
+        helperModal.style.display = 'flex';
+        setBtState(true);
+        console.log(btState);
+      } else {
+        helperModal.style.display = 'none';
+        setBtState(false);
+        console.log(btState);
+      }
+    };
+  }
+
+  function openModal(comment) {
+    setsingleComment(comment);
+
+    var modal = document.getElementById('myModal');
+
+    var id_button = comment.product_name.concat(comment.id);
+
+    var btn = document.getElementById(id_button);
+
+    btn.onclick = function () {
+      modal.style.display = 'block';
+    };
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+  }
+
+  function closeModal() {
+    var modal = document.getElementById('myModal');
+
+    var btn = document.getElementById('bt_responder_modal');
+
+    btn.onclick = function () {
+      modal.style.display = 'none';
+    };
+  }
 
   useEffect(() => {
     api.get('/product').then((response) => {
@@ -31,7 +94,19 @@ export default function BodySistema() {
           Bem vindo ao seu Sistema Automatizado de Classificação de Perguntas
         </h2>
         <section className="filtros">
-          <form>
+          <div className="help_modal" id="help_modal">
+            <h1>Ajuda com Filtros</h1>
+            <p className="topic">Complexidade:</p>
+            <p>Simples: Respondida pelo Bot</p>
+            <p>Complexa: Não Respondida pelo Bot</p>
+            <p className="topic">Status:</p>
+            <p>Respondida: Respondida por você</p>
+            <p>Pendente: Não Respondida por você</p>
+          </div>
+          <button id="help_button" className="help_button" onClick={openHelper}>
+            <FiHelpCircle className="help_icon" />
+          </button>
+          <form onSubmit={Search}>
             <select
               name="tipo_pergunta"
               id="tipo_pergunta"
@@ -40,18 +115,24 @@ export default function BodySistema() {
               <option selected disabled hidden>
                 Complexidade
               </option>
+              <option value="simples">Simples</option>
+              <option value="complexa">Complexa</option>
             </select>
             <select name="status" id="status" placeholder="Status">
               <option selected disabled hidden>
                 Status
               </option>
+              <option value="pendente">Pendente</option>
+              <option value="respondida">Respondida</option>
             </select>
             <select name="tags" id="tags" placeholder="Tags">
               <option selected disabled hidden>
                 Tags
               </option>
             </select>
-            <button className="bt_submit">Buscar</button>
+            <button className="bt_submit" type="submit">
+              Buscar
+            </button>
           </form>
         </section>
         <section className="perguntas">

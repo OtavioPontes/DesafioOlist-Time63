@@ -33,6 +33,8 @@ async function findComments(filters) {
         });
     });
 
+    console.log(filters);
+
     if (filters && Object.keys(filters).length > 0) {
         Object.keys(filters).forEach((item) => {
             if (item) {
