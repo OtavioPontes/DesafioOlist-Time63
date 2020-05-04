@@ -6,7 +6,7 @@ Este é o Sistema Automatizado de Classificação de Perguntas para o Desafio Ol
 ### A Solução
 A ideia dessa solução é atacar o problema do fluxo de perguntas extremamente cheio e mal-estruturado enfrentado pela Olist e seus clientes em duas frentes: na interação com o cliente e na organização das perguntas para o vendedor.
 
-Para isso, criamos um sistema que classifica e filtra as perguntas para o vendedor, com esses filtros sendo: a complexidade da pergunta, o status em que a pergunta se encontra e a tag que melhor classifica essa pergunta. Além disso, contamos com o auxílio de um bot que é responsável por responder automáticamente as perguntas mais simples.
+Para isso, criamos um sistema que classifica e filtra as perguntas para o vendedor, com esses filtros sendo: a complexidade da pergunta, o status em que a pergunta se encontra e a tag que melhor classifica essa pergunta. Além disso, contamos com o auxílio de um bot que é responsável por responder automáticamente as perguntas mais simples. Criamos também uma loja virtual ~~Chameguinho Store~~ para fins de demonstração da nossa solução.
 
 <b>Sendo assim, o Bot pode ajudar a diminuir esse fluxo e o sistema estrutura esse fluxo para uma melhor visualização e organização por parte do vendedor.</b>
 
