@@ -13,10 +13,10 @@ function handleMessage(message, product) {
             response += product[prop];
         }
 
-        return response;
+        return [prop, response];
     }
 
-    return;
+    return ['', 'Aguarde um instante, o vendedor já irá te atender'];
 }
 
 function findTagComment(message) {
