@@ -274,6 +274,7 @@ export default function BodySistema() {
               <p className="Usuario">Usuário: {singleComment.customer_name}</p>
               <p className="Produto">Produto: {singleComment.product_name}</p>
               <p classname="status">Status: {singleComment.status_tag}</p>
+              <p classname="type">Complexidade: {singleComment.type_tag}</p>
               <p className="Tags">
                 Tags: <button>{singleComment.tag}</button>
               </p>
