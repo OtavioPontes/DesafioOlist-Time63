@@ -97,12 +97,11 @@ async function newComment(data, productId) {
         description,
         await findById(productId)
     );
-
     if (response) {
         _getProductComment(productId, id)
             .assign({
                 response,
-                status: "closed",
+
                 type: "simple",
                 type_tag: "Simples",
                 tag: prop,
