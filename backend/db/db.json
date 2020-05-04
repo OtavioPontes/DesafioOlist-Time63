@@ -31,6 +31,7 @@
                     "product_id": "1",
                     "product_name": "Camiseta Básica Preta",
                     "type": "simple",
+                    "type_tag": "Simples",
                     "tag": "cor",
                     "response": "Segue as cores disponíveis: Preta"
                 },
@@ -44,8 +45,23 @@
                     "product_id": "1",
                     "product_name": "Camiseta Básica Preta",
                     "type": "complex",
+                    "type_tag": "Complexa",
                     "tag": "disponibilidade",
                     "response": "Possuimos sim"
+                },
+                {
+                    "id": 3,
+                    "customer_name": "usuario1",
+                    "customer_image": "https://drive.google.com/uc?export=download&id=1zptf5GN2cpjkS25q8LFlxG6v07SkCtFM",
+                    "description": "qual o material?",
+                    "status": "closed",
+                    "status_tag": "Pendente",
+                    "product_id": 1,
+                    "product_name": "Camiseta Básica Preta",
+                    "tag": "material",
+                    "type": "simple",
+                    "type_tag": "Simples",
+                    "response": "O produto é feito em Algodão"
                 }
             ]
         },
@@ -80,6 +96,7 @@
                     "product_id": "2",
                     "product_name": "Calça Jeans Bege",
                     "type": "simple",
+                    "type_tag": "Simples",
                     "tag": "tamanho",
                     "response": "Temos sim"
                 }
@@ -116,6 +133,7 @@
                     "product_id": "3",
                     "product_name": "Boné Aba Reta",
                     "type": "simple",
+                    "type_tag": "Simples",
                     "tag": "cor",
                     "response": "Segue as cores disponíveis: Cinza e Preta"
                 }

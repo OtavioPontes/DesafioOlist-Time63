@@ -57,6 +57,16 @@ export default function BodySistema() {
         .then((response) => {
           setComments(response.data);
         });
+    } else {
+      api
+        .post('/product/comment/list', {
+          status: finalStatus,
+          type: finalComplexidade,
+          tag: finalTag,
+        })
+        .then((response) => {
+          setComments(response.data);
+        });
     }
   }
 
@@ -229,6 +239,7 @@ export default function BodySistema() {
               <p className="Usuario">Usuário: {comment.customer_name}</p>
               <p className="Produto">Produto: {comment.product_name}</p>
               <p classname="status">Status: {comment.status_tag}</p>
+              <p classname="complexidade">Complexidade: {comment.type_tag}</p>
               <p className="Tags">
                 Tag:{' '}
                 <button onClick={() => SearchTag(comment.tag)}>

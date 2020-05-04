@@ -86,6 +86,7 @@ async function newComment(data, productId) {
         product_name: product.nome,
         tag: "",
         type: "",
+        type_tag: "",
         tag: "",
         response: "",
     };
@@ -99,10 +100,18 @@ async function newComment(data, productId) {
 
     if (response) {
         _getProductComment(productId, id)
-            .assign({ response, status: "closed", type: "simple", tag: prop })
+            .assign({
+                response,
+                status: "closed",
+                type: "simple",
+                type_tag: "Simples",
+                tag: prop,
+            })
             .write();
     } else {
-        _getProductComment(productId, id).assign({ type: "complex" }).write();
+        _getProductComment(productId, id)
+            .assign({ type: "complex", type_tag: "Complexa" })
+            .write();
     }
     return response;
 }
