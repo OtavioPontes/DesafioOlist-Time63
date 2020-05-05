@@ -26,6 +26,20 @@ Para isso, criamos um sistema que classifica e filtra as perguntas para o vended
  - [x] Implementação do Frontend Web com o ReactJs;
  - [ ] Implementação do Frontend Mobile com o React-Native;
  
+ ## Inicialização do Projeto
+    
+    Após clonar o repositório:
+ ```
+    cd frontend 
+    npm install ou yarn -> instalar os módulos do frontend
+    npm start ou yarn start -> inicializar o servidor 
+    
+    cd backend
+    npm install ou yarn -> instalar os módulos do backend
+    npm start ou yarn start -> inicializar o servidor
+ ```
+ 
+ 
  ## Imagens do Projeto
  <img src="/frontend/src/assets/home.png" width="350" height="200"> <img src="/frontend/src/assets/detalhes.png" width="350" height="200">
  
